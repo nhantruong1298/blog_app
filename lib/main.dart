@@ -33,7 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.blue[300].withOpacity(0.5),
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
       ),
       body: Stack(children: [
@@ -41,12 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
             width: size.width,
             height: size.height * 0.4,
             decoration: BoxDecoration(
-              color: Colors.blue[300].withOpacity(0.5),
+              color: Colors.white,
             )),
         Container(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           width: size.width,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: size.height * 0.42),
@@ -78,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
+                  const SizedBox(width: 20),
                   Flexible(
                     flex: 1,
                     fit: FlexFit.tight,
@@ -96,10 +99,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                       child: InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.person,
-                          color: Colors.blue[200],
+                        onTap: () => Get.toNamed('/notes'),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.note,
+                              color: Colors.blue[200],
+                            ),
+                            Text(' Notes')
+                          ],
                         ),
                       ),
                     ),
