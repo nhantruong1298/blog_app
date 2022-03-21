@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pet_project_flutter/modules/profile/screen/profile_background.dart';
 import 'package:get/get.dart';
+import 'package:pet_project_flutter/features/profile/views/profile_background.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
