@@ -8,3 +8,4 @@ Packages:
 + gen code: freezed , json_serializable , flutter_gen
 + networking : dio , retrofit
 + flutter_firebase
++ rule : flutter_lints
