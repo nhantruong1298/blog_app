@@ -23,7 +23,6 @@ class _BasicLayoutState extends State<BasicLayout> {
       appBar: widget.appBar ??
           AppBar(
             elevation: 0.0,
-            backgroundColor: Colors.blue[50],
             automaticallyImplyLeading: widget.automaticallyImplyLeading,
             leading: InkWell(
               splashColor: Colors.transparent,
@@ -35,7 +34,7 @@ class _BasicLayoutState extends State<BasicLayout> {
               ),
             ),
           ),
-      backgroundColor: Color.fromARGB(255, 73, 29, 29),
+      backgroundColor: AppColors.backGroundColor,
       body: SafeArea(child: widget.child ?? Container()),
     );
   }
