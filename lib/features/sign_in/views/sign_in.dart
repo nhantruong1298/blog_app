@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:pet_project_flutter/widgets/commons/layouts/basic_layout.dart';
 import 'package:pet_project_flutter/widgets/input/password_input_field.dart';
 
@@ -19,7 +20,13 @@ class _SignInScreenState extends State<SignInScreen> {
     return BasicLayout(
       child: FormBuilder(
           key: _formKey,
-          child: Column(children: [PasswordInputField(name: PASSWORD_KEY)])),
+          child: Column(children: [
+            PasswordInputField(
+              name: PASSWORD_KEY,
+            validator: FormBuilderValidators.compose([
+
+            ]),),
+          ])),
     );
   }
 }
