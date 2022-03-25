@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:pet_project_flutter/widgets/input/password_input.dart';
 
 class PasswordInputField extends StatefulWidget {
   final String name;
@@ -30,19 +31,7 @@ class _PasswordInputFieldState extends State<PasswordInputField> {
         validator: widget.validator,
         autovalidateMode: widget.autovalidateMode ?? AutovalidateMode.disabled,
         builder: (field) {
-          return TextFormField(
-            autovalidateMode: widget.autovalidateMode,
-            autofillHints: [AutofillHints.password],
-            controller: widget.controller,
-            decoration: InputDecoration(
-              floatingLabelBehavior: FloatingLabelBehavior.auto,
-            ),
-            initialValue: widget.initValue ?? '',
-            onChanged: (value) {
-              if (widget.onChanged != null) widget.onChanged!(value);
-              field.didChange(value);
-            },
-          );
+          return PasswordInput();
         },
         name: widget.name);
   }
