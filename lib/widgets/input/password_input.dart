@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_project_flutter/util/colors/app_colors.dart';
 
 class PasswordInput extends StatefulWidget {
   final List<String>? autofillHints;
@@ -6,13 +7,17 @@ class PasswordInput extends StatefulWidget {
   final TextEditingController? controller;
   final Function(String)? onChanged;
   final FocusNode? focusNode;
+  final String? errorText;
+  final String label;
   PasswordInput(
       {Key? key,
       this.autofillHints,
       this.decoration,
       this.controller,
       this.onChanged,
-      this.focusNode})
+      this.focusNode,
+      required this.label,
+      this.errorText})
       : super(key: key);
 
   @override
@@ -38,6 +43,7 @@ class _PasswordInputState extends State<PasswordInput> {
   }
 
   void onFocus() {
+    print('on focus');
     setState(() {
       _hasFocus = true;
     });
@@ -50,13 +56,24 @@ class _PasswordInputState extends State<PasswordInput> {
       controller: widget.controller,
       decoration: widget.decoration ??
           InputDecoration(
-            floatingLabelBehavior: FloatingLabelBehavior.auto,
-            
-          ),
+              errorText: widget.errorText,
+              floatingLabelBehavior: FloatingLabelBehavior.auto,
+              labelStyle: _getLabelStyle(),
+              labelText: widget.label,
+              hintText: (_hasFocus) ? '' : widget.label,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                  borderSide: BorderSide(color: Colors.blue))),
       onChanged: (value) {
         widget.onChanged?.call(value);
       },
       focusNode: _focusNode,
     );
+  }
+
+  TextStyle _getLabelStyle() {
+    return (_hasFocus)
+        ? TextStyle(color: AppColors.primaryColor)
+        : TextStyle(color: AppColors.textColor);
   }
 }

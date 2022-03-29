@@ -12,8 +12,7 @@ class BasicLayout extends StatefulWidget {
       this.automaticallyImplyLeading = false,
       this.appBar,
       this.child,
-      this.padding
-      })
+      this.padding})
       : super(key: key);
 
   @override
@@ -24,25 +23,26 @@ class _BasicLayoutState extends State<BasicLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: widget.appBar ??
-          AppBar(
-            elevation: 0.0,
-            automaticallyImplyLeading: widget.automaticallyImplyLeading,
-            leading: InkWell(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              child: Icon(
-                Icons.navigate_before,
-                size: 20,
-                color: AppColors.backGroundColor,
+      appBar: widget.automaticallyImplyLeading
+          ? AppBar(
+              elevation: 0.0,
+              automaticallyImplyLeading: widget.automaticallyImplyLeading,
+              leading: InkWell(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                child: Icon(
+                  Icons.navigate_before,
+                  size: 30,
+                  color: AppColors.backGroundColor,
+                ),
               ),
-            ),
-          ),
+            )
+          : null,
       backgroundColor: AppColors.backGroundColor,
       body: SafeArea(
           child: Container(
-            width: double.infinity,
-            height: double.infinity,
+        width: double.infinity,
+        height: double.infinity,
         padding: widget.padding ?? EdgeInsets.all(AppDimension.defaultPadding),
         child: widget.child ?? Container(),
       )),
