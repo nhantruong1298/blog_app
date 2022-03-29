@@ -18,14 +18,20 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return BasicLayout(
+      automaticallyImplyLeading: false,
       child: FormBuilder(
           key: _formKey,
-          child: Column(children: [
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             PasswordInputField(
               name: PASSWORD_KEY,
-            validator: FormBuilderValidators.compose([
-
-            ]),),
+              label: 'Password',
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              initValue: '',
+              validator: FormBuilderValidators.compose([
+                FormBuilderValidators.required(context),
+                
+              ]),
+            ),
           ])),
     );
   }

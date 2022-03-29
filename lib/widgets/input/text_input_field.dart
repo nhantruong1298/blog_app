@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:pet_project_flutter/resources/app_dimension.dart';
 import 'package:pet_project_flutter/widgets/input/password_input.dart';
 
-class PasswordInputField extends StatefulWidget {
+class TextInputField extends StatefulWidget {
   final String name;
   final String? initValue;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
   final AutovalidateMode? autovalidateMode;
-  final String label;
   final Function(String text)? onChanged;
-  const PasswordInputField(
+  const TextInputField(
       {Key? key,
       required this.name,
-      required this.label,
       this.initValue,
       this.validator,
       this.autovalidateMode,
@@ -22,23 +21,35 @@ class PasswordInputField extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<PasswordInputField> createState() => _PasswordInputFieldState();
+  State<TextInputField> createState() => _TextInputFieldState();
 }
 
-class _PasswordInputFieldState extends State<PasswordInputField> {
+class _TextInputFieldState extends State<TextInputField> {
   @override
   Widget build(BuildContext context) {
     return FormBuilderField(
         initialValue: widget.initValue ?? '',
         validator: widget.validator,
-        autovalidateMode: widget.autovalidateMode ?? AutovalidateMode.disabled,
         builder: (field) {
-          return PasswordInput(
-            label: widget.label,
-            errorText: field.errorText,
+          final errorText = field.errorText;
+          return TextFormField(
+            
+            autovalidateMode: widget.autovalidateMode,
+            decoration:InputDecoration(
+            
+              errorText: errorText,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(AppDimension.defaultRadius)),
+                  borderSide: BorderSide(color: Colors.blue))
+            ),
             onChanged: (text) {
               field.didChange(text);
             },
+            onTap: () {
+              if (widget.autovalidateMode != AutovalidateMode.disabled)
+                field.validate();
+            },
+
           );
         },
         name: widget.name);
