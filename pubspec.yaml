@@ -19,6 +19,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
@@ -29,16 +30,33 @@ dependencies:
   get: ^4.1.4
   wave: ^0.2.0
   intl: ^0.17.0
+  flutter_localizations:
+    sdk: flutter
+  gap: ^2.0.0
+  freezed_annotation: ^1.1.0
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  intl_utils:
+  build_runner: "^2.1.7"
+  flutter_gen_runner: "4.1.5"
+  freezed: ^1.1.1
   
 
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+flutter_intl:
+  enabled: true
+  class_name: S
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/generated/
+  use_deferred_loading: false
     
 
   

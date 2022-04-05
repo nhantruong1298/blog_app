@@ -10,6 +10,9 @@ class TextInputField extends StatefulWidget {
   final TextEditingController? controller;
   final AutovalidateMode? autovalidateMode;
   final Function(String text)? onChanged;
+  final TextInputType? textInputType;
+  final List<String>? autoFillHints;
+  final String label;
   const TextInputField(
       {Key? key,
       required this.name,
@@ -17,7 +20,10 @@ class TextInputField extends StatefulWidget {
       this.validator,
       this.autovalidateMode,
       this.onChanged,
-      this.controller})
+      this.controller,
+      this.autoFillHints,
+      required this.label,
+      this.textInputType})
       : super(key: key);
 
   @override
@@ -33,15 +39,16 @@ class _TextInputFieldState extends State<TextInputField> {
         builder: (field) {
           final errorText = field.errorText;
           return TextFormField(
-            
             autovalidateMode: widget.autovalidateMode,
-            decoration:InputDecoration(
-            
-              errorText: errorText,
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(AppDimension.defaultRadius)),
-                  borderSide: BorderSide(color: Colors.blue))
-            ),
+            keyboardType: widget.textInputType,
+            autofillHints: widget.autoFillHints,
+            decoration: InputDecoration(
+              labelText: widget.label,
+                errorText: errorText,
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(AppDimension.defaultRadius)),
+                    borderSide: BorderSide(color: Colors.blue))),
             onChanged: (text) {
               field.didChange(text);
             },
@@ -49,7 +56,6 @@ class _TextInputFieldState extends State<TextInputField> {
               if (widget.autovalidateMode != AutovalidateMode.disabled)
                 field.validate();
             },
-
           );
         },
         name: widget.name);
