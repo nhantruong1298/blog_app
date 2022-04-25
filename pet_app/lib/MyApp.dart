@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_core/main.dart';
+import 'package:pet_core/pet_core.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);

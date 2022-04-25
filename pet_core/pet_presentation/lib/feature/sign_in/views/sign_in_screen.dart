@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:pet_project_flutter/generated/l10n.dart';
-import 'package:pet_project_flutter/widgets/commons/layouts/basic_layout.dart';
-import 'package:pet_project_flutter/widgets/input/password_input_field.dart';
-import 'package:pet_project_flutter/widgets/input/text_input_field.dart';
+import 'package:pet_presentation/generated/l10n.dart';
+import 'package:pet_presentation/widgets/commons/layouts/basic_layout.dart';
+import 'package:pet_presentation/widgets/input/password_input_field.dart';
+import 'package:pet_presentation/widgets/input/text_input_field.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);

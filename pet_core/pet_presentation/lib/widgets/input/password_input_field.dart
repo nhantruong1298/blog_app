@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:pet_project_flutter/widgets/input/password_input.dart';
+import 'package:pet_presentation/widgets/input/password_input.dart';
 
 class PasswordInputField extends StatefulWidget {
   final String name;

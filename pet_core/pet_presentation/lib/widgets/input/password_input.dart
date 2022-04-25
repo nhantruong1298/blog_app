@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_project_flutter/util/colors/app_colors.dart';
+import 'package:pet_presentation/colors/app_colors.dart';
 
 class PasswordInput extends StatefulWidget {
   final List<String>? autofillHints;
@@ -61,9 +61,9 @@ class _PasswordInputState extends State<PasswordInput> {
               labelStyle: _getLabelStyle(),
               labelText: widget.label,
               hintText: (_hasFocus) ? '' : widget.label,
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide: BorderSide(color: Colors.blue))),
+              border: const OutlineInputBorder(
+                  borderRadius:  BorderRadius.all( Radius.circular(8)),
+                  borderSide:  BorderSide(color: Colors.blue))),
       onChanged: (value) {
         widget.onChanged?.call(value);
       },
@@ -73,7 +73,7 @@ class _PasswordInputState extends State<PasswordInput> {
 
   TextStyle _getLabelStyle() {
     return (_hasFocus)
-        ? TextStyle(color: AppColors.primaryColor)
-        : TextStyle(color: AppColors.textColor);
+        ? const TextStyle(color: AppColors.primaryColor)
+        : const TextStyle(color: AppColors.textColor);
   }
 }

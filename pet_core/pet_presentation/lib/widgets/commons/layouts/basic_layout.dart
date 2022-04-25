@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pet_project_flutter/resources/app_dimension.dart';
-import 'package:pet_project_flutter/util/colors/app_colors.dart';
-import 'package:pet_project_flutter/widgets/commons/typography/heading_text.dart';
+import 'package:pet_presentation/colors/app_colors.dart';
+import 'package:pet_presentation/resources/app_dimension.dart';
+import 'package:pet_presentation/widgets/commons/typography/heading_text.dart';
 
 class BasicLayout extends StatefulWidget {
   final bool automaticallyImplyLeading;
@@ -30,7 +30,7 @@ class _BasicLayoutState extends State<BasicLayout> {
           ? AppBar(
               elevation: 0.0,
               automaticallyImplyLeading: widget.automaticallyImplyLeading,
-              leading: InkWell(
+              leading: const InkWell(
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
                 child: Icon(
@@ -46,7 +46,7 @@ class _BasicLayoutState extends State<BasicLayout> {
           child: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: widget.padding ?? EdgeInsets.all(AppDimension.defaultPadding),
+        padding: widget.padding ?? const EdgeInsets.all(AppDimension.defaultPadding),
         child: (widget.child != null)
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

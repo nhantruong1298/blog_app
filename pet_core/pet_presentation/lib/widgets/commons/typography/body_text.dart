@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pet_project_flutter/resources/app_dimension.dart';
-import 'package:pet_project_flutter/util/colors/app_colors.dart';
+import 'package:pet_presentation/colors/app_colors.dart';
+import 'package:pet_presentation/resources/app_dimension.dart';
 
 class BodyText extends StatelessWidget {
   final String? data;
