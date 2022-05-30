@@ -9,8 +9,12 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
+  firebase_core: ^1.15.0
   flutter:
     sdk: flutter
+  pet_presentation:
+    path : ./pet_presentation
+  
   
   
 

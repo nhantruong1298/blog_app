@@ -34,7 +34,11 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Widget _socialAuth() {
     return Column(
-      
+      children: [
+        TextButton(onPressed: (){
+          
+        }, child: Text('Sign in with google'))
+      ]
 
     );
   }
