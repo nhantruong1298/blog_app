@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:pet_presentation/resources/app_dimension.dart';
+import 'package:pet_presentation/resources/app_dimensions.dart';
 
 class TextInputField extends StatefulWidget {
   final String name;
@@ -42,11 +42,11 @@ class _TextInputFieldState extends State<TextInputField> {
             keyboardType: widget.textInputType,
             autofillHints: widget.autoFillHints,
             decoration: InputDecoration(
-              labelText: widget.label,
+                labelText: widget.label,
                 errorText: errorText,
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
-                        Radius.circular(AppDimension.defaultRadius)),
+                        Radius.circular(AppDimensions.defaultRadius)),
                     borderSide: BorderSide(color: Colors.blue))),
             onChanged: (text) {
               field.didChange(text);

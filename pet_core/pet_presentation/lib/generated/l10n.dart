@@ -51,20 +51,30 @@ class S {
   }
 
   /// `Email`
-  String get SIGN_IN_EMAIL {
+  String get SIGN_IN__EMAIL {
     return Intl.message(
       'Email',
-      name: 'SIGN_IN_EMAIL',
+      name: 'SIGN_IN__EMAIL',
       desc: '',
       args: [],
     );
   }
 
   /// `Password`
-  String get SIGN_IN_PASSWORD {
+  String get SIGN_IN__PASSWORD {
     return Intl.message(
       'Password',
-      name: 'SIGN_IN_PASSWORD',
+      name: 'SIGN_IN__PASSWORD',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in`
+  String get SIGN_IN__TEXT {
+    return Intl.message(
+      'Sign in',
+      name: 'SIGN_IN__TEXT',
       desc: '',
       args: [],
     );

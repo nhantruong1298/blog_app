@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pet_presentation/colors/app_colors.dart';
+import 'package:pet_presentation/resources/app_colors.dart';
 
 class PasswordInput extends StatefulWidget {
   final List<String>? autofillHints;
@@ -73,7 +73,7 @@ class _PasswordInputState extends State<PasswordInput> {
 
   TextStyle _getLabelStyle() {
     return (_hasFocus)
-        ? const TextStyle(color: AppColors.primaryColor)
+        ? const TextStyle(color: AppColors.primaryBackgroundColor)
         : const TextStyle(color: AppColors.textColor);
   }
 }

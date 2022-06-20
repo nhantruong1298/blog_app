@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pet_presentation/colors/app_colors.dart';
-import 'package:pet_presentation/resources/app_dimension.dart';
+import 'package:pet_presentation/resources/app_colors.dart';
+import 'package:pet_presentation/resources/app_dimensions.dart';
 import 'package:pet_presentation/widgets/commons/typography/body_text.dart';
 
 class HeadingText extends BodyText {
   static get defaultTextStyle => const TextStyle(
       color: AppColors.textColor,
-      fontSize: AppDimension.headingTextSize,
+      fontSize: AppDimensions.heading1FontSize,
       fontWeight: FontWeight.w600);
   final String? data;
   final Color? color;

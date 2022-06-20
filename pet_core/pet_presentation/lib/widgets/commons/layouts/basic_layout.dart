@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pet_presentation/colors/app_colors.dart';
-import 'package:pet_presentation/resources/app_dimension.dart';
+import 'package:pet_presentation/resources/app_colors.dart';
+import 'package:pet_presentation/resources/app_dimensions.dart';
 import 'package:pet_presentation/widgets/commons/typography/heading_text.dart';
 
 class BasicLayout extends StatefulWidget {
@@ -36,23 +36,23 @@ class _BasicLayoutState extends State<BasicLayout> {
                 child: Icon(
                   Icons.navigate_before,
                   size: 30,
-                  color: AppColors.backGroundColor,
+                  color: AppColors.backgroundColor,
                 ),
               ),
             )
           : null,
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
           child: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: widget.padding ?? const EdgeInsets.all(AppDimension.defaultPadding),
+        padding: widget.padding ??
+            const EdgeInsets.all(AppDimensions.defaultPadding),
         child: (widget.child != null)
-            ? Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  HeadingText(widget.title),
-                  Expanded(child: widget.child!)])
+            ? Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                HeadingText(widget.title),
+                Expanded(child: widget.child!)
+              ])
             : const SizedBox.shrink(),
       )),
     );

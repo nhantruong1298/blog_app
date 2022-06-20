@@ -1,5 +1,5 @@
-import 'package:pet_domain/model/user/google_sign_in.dart';
+import 'package:pet_domain/model/authentication/firebase_auth.dart';
 
 abstract class UserRepository {
-  Future<GoogleSignInResult?> signInWithGoogle();
+  Future<FireBaseAuthResult> signInWithFirebaseAuth(String email,String password);
 }

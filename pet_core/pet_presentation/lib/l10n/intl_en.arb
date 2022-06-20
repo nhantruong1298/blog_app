@@ -1,4 +1,5 @@
 {
-    "SIGN_IN_EMAIL":"Email",
-    "SIGN_IN_PASSWORD":"Password"
+    "SIGN_IN__EMAIL":"Email",
+    "SIGN_IN__PASSWORD":"Password",
+    "SIGN_IN__TEXT":"Sign in"
 }
