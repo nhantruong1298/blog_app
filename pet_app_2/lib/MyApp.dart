@@ -4,6 +4,10 @@ import 'package:pet_core/pet_core.dart';
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  static void initConfig() async {
+    await PetCore.initConfig();
+  }
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -11,6 +15,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return PetCore();
+    return const PetCore();
   }
 }

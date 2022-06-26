@@ -20,7 +20,8 @@ dependencies:
   flutter_bloc: ^8.0.1
   get_it: ^7.2.0
   badges: ^2.0.3
-  freezed_annotation: 
+  freezed_annotation:
+  modal_bottom_sheet: ^2.1.0 
 
 dev_dependencies:
   flutter_test:

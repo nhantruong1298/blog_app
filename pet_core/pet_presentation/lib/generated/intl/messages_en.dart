@@ -22,6 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "COMMON__CANCEL_BUTTON": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "COMMON__CONFIRM_BUTTON":
+            MessageLookupByLibrary.simpleMessage("Confirm"),
+        "COMMON__OK_BUTTON": MessageLookupByLibrary.simpleMessage("OK"),
+        "EXCEPTION__UNEXPECTED":
+            MessageLookupByLibrary.simpleMessage("Unexpected error"),
         "SIGN_IN__EMAIL": MessageLookupByLibrary.simpleMessage("Email"),
         "SIGN_IN__PASSWORD": MessageLookupByLibrary.simpleMessage("Password"),
         "SIGN_IN__TEXT": MessageLookupByLibrary.simpleMessage("Sign in")

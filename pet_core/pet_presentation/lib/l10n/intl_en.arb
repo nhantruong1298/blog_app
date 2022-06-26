@@ -1,5 +1,9 @@
 {
     "SIGN_IN__EMAIL":"Email",
     "SIGN_IN__PASSWORD":"Password",
-    "SIGN_IN__TEXT":"Sign in"
+    "SIGN_IN__TEXT":"Sign in",
+    "COMMON__CANCEL_BUTTON":"Cancel",
+    "COMMON__OK_BUTTON":"OK",
+    "COMMON__CONFIRM_BUTTON":"Confirm",
+    "EXCEPTION__UNEXPECTED":"Unexpected error"
 }

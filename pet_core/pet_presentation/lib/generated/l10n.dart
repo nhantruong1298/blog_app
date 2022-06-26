@@ -79,6 +79,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Cancel`
+  String get COMMON__CANCEL_BUTTON {
+    return Intl.message(
+      'Cancel',
+      name: 'COMMON__CANCEL_BUTTON',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get COMMON__OK_BUTTON {
+    return Intl.message(
+      'OK',
+      name: 'COMMON__OK_BUTTON',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get COMMON__CONFIRM_BUTTON {
+    return Intl.message(
+      'Confirm',
+      name: 'COMMON__CONFIRM_BUTTON',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected error`
+  String get EXCEPTION__UNEXPECTED {
+    return Intl.message(
+      'Unexpected error',
+      name: 'EXCEPTION__UNEXPECTED',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
