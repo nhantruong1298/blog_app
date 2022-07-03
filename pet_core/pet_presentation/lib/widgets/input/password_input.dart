@@ -1,79 +1,107 @@
 import 'package:flutter/material.dart';
-import 'package:pet_presentation/resources/app_colors.dart';
 
 class PasswordInput extends StatefulWidget {
-  final List<String>? autofillHints;
-  final InputDecoration? decoration;
+  final bool readOnly;
+  final String labelText;
+  final String? initialValue;
+  final String? value;
+  final TextInputAction textInputAction;
+  final List<String> autofillHints;
+  final Function(String value)? onChanged;
   final TextEditingController? controller;
-  final Function(String)? onChanged;
-  final FocusNode? focusNode;
   final String? errorText;
-  final String label;
-  PasswordInput(
+  final InputDecoration? decoration;
+  final String? hintText;
+  final TextStyle? hintStyle;
+  final TextStyle? labelStyle;
+  final VoidCallback? onTap;
+  final VoidCallback? onFocus;
+
+  const PasswordInput(
       {Key? key,
-      this.autofillHints,
-      this.decoration,
-      this.controller,
+      this.readOnly = false,
+      this.labelText = '',
+      this.initialValue,
+      this.value,
+      this.textInputAction = TextInputAction.done,
+      this.autofillHints = const [AutofillHints.password],
       this.onChanged,
-      this.focusNode,
-      required this.label,
-      this.errorText})
+      this.controller,
+      this.errorText,
+      this.decoration,
+      this.hintText,
+      this.hintStyle,
+      this.onTap,
+      this.onFocus,
+      this.labelStyle})
       : super(key: key);
 
   @override
-  State<PasswordInput> createState() => _PasswordInputState();
+  _PasswordInputState createState() => _PasswordInputState();
 }
 
 class _PasswordInputState extends State<PasswordInput> {
-  late final FocusNode _focusNode;
-  bool _hasFocus = false;
+  TextEditingController? _passwordController;
+
+  bool isPasswordVisible = false;
+  final FocusNode _focusNode = FocusNode();
 
   @override
   void initState() {
+    _passwordController =
+        TextEditingController(text: widget.initialValue ?? '');
+    if (widget.onFocus != null) {
+      _focusNode.addListener(widget.onFocus!);
+    }
+
     super.initState();
-    _focusNode = widget.focusNode ?? FocusNode();
-    _focusNode.addListener(onFocus);
   }
 
   @override
   void dispose() {
-    _focusNode.removeListener(onFocus);
+    _passwordController!.dispose();
+    if (widget.onFocus != null) {
+      _focusNode.removeListener(widget.onFocus!);
+    }
     _focusNode.dispose();
     super.dispose();
   }
 
-  void onFocus() {
-    print('on focus');
-    setState(() {
-      _hasFocus = true;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      autofillHints: [AutofillHints.password],
-      controller: widget.controller,
-      decoration: widget.decoration ??
-          InputDecoration(
-              errorText: widget.errorText,
-              floatingLabelBehavior: FloatingLabelBehavior.auto,
-              labelStyle: _getLabelStyle(),
-              labelText: widget.label,
-              hintText: (_hasFocus) ? '' : widget.label,
-              border: const OutlineInputBorder(
-                  borderRadius:  BorderRadius.all( Radius.circular(8)),
-                  borderSide:  BorderSide(color: Colors.blue))),
-      onChanged: (value) {
-        widget.onChanged?.call(value);
-      },
-      focusNode: _focusNode,
-    );
-  }
+    final Widget assetIcon = isPasswordVisible
+        ? const Icon(Icons.visibility_off)
+        : const Icon(Icons.visibility);
+    final effectiveDecoration = const InputDecoration()
+        .applyDefaults(Theme.of(context).inputDecorationTheme);
 
-  TextStyle _getLabelStyle() {
-    return (_hasFocus)
-        ? const TextStyle(color: AppColors.primaryBackgroundColor)
-        : const TextStyle(color: AppColors.textColor);
+    return TextField(
+        readOnly: widget.readOnly,
+        focusNode: _focusNode,
+        controller: widget.controller ?? _passwordController,
+        obscureText: !isPasswordVisible,
+        textInputAction: widget.textInputAction,
+        autofillHints: widget.readOnly ? null : widget.autofillHints,
+        onTap: () {
+          widget.onTap?.call();
+        },
+        onChanged: (value) {
+          widget.onChanged?.call(value);
+        },
+        decoration: (widget.decoration ?? effectiveDecoration).copyWith(
+            floatingLabelBehavior: FloatingLabelBehavior.auto,
+            labelText: widget.labelText,
+            labelStyle: widget.labelStyle,
+            errorText: widget.errorText,
+            hintText: widget.hintText,
+            hintStyle: widget.hintStyle,
+            suffixIcon: IconButton(
+              icon: assetIcon,
+              onPressed: () {
+                setState(() {
+                  isPasswordVisible = !isPasswordVisible;
+                });
+              },
+            )));
   }
 }

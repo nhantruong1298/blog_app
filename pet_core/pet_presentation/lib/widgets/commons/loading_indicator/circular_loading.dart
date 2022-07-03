@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_presentation/resources/app_colors.dart';
 
-
 class CircularLoading extends StatefulWidget {
   final double? size;
   const CircularLoading({
@@ -21,7 +20,8 @@ class _CircularLoadingState extends State<CircularLoading> {
         width: widget.size,
         height: widget.size,
         child: const CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(AppColors.primaryBackgroundColor),
+          valueColor:
+              AlwaysStoppedAnimation<Color>(AppColors.primaryLightColor),
           strokeWidth: 6,
         ),
       ),

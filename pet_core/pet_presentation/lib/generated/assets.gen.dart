@@ -7,12 +7,23 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/logo_pet_app.png
+  AssetGenImage get logoPetApp =>
+      const AssetGenImage('assets/images/logo_pet_app.png');
+}
+
 class Assets {
   Assets._();
+
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage extends AssetImage {
-  const AssetGenImage(String assetName) : super(assetName);
+  const AssetGenImage(String assetName)
+      : super(assetName, package: 'pet_presentation');
 
   Image image({
     Key? key,

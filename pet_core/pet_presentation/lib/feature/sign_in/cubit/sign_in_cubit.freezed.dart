@@ -20,7 +20,7 @@ mixin _$SignInState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(String errorMessage) exception,
+    required TResult Function(AppException appException) exception,
     required TResult Function(SignInResult result) success,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$SignInState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$SignInState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
     required TResult orElse(),
   }) =>
@@ -127,7 +127,7 @@ class _$SignInInitial implements SignInInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(String errorMessage) exception,
+    required TResult Function(AppException appException) exception,
     required TResult Function(SignInResult result) success,
   }) {
     return init();
@@ -138,7 +138,7 @@ class _$SignInInitial implements SignInInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
   }) {
     return init?.call();
@@ -149,7 +149,7 @@ class _$SignInInitial implements SignInInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
     required TResult orElse(),
   }) {
@@ -267,7 +267,7 @@ class _$LoadingState implements LoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(String errorMessage) exception,
+    required TResult Function(AppException appException) exception,
     required TResult Function(SignInResult result) success,
   }) {
     return loading(isLoading);
@@ -278,7 +278,7 @@ class _$LoadingState implements LoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
   }) {
     return loading?.call(isLoading);
@@ -289,7 +289,7 @@ class _$LoadingState implements LoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
     required TResult orElse(),
   }) {
@@ -351,7 +351,7 @@ abstract class _$$SignInExceptionStateCopyWith<$Res> {
   factory _$$SignInExceptionStateCopyWith(_$SignInExceptionState value,
           $Res Function(_$SignInExceptionState) then) =
       __$$SignInExceptionStateCopyWithImpl<$Res>;
-  $Res call({String errorMessage});
+  $Res call({AppException appException});
 }
 
 /// @nodoc
@@ -367,13 +367,13 @@ class __$$SignInExceptionStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? errorMessage = freezed,
+    Object? appException = freezed,
   }) {
     return _then(_$SignInExceptionState(
-      errorMessage == freezed
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+      appException == freezed
+          ? _value.appException
+          : appException // ignore: cast_nullable_to_non_nullable
+              as AppException,
     ));
   }
 }
@@ -381,14 +381,14 @@ class __$$SignInExceptionStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignInExceptionState implements SignInExceptionState {
-  const _$SignInExceptionState(this.errorMessage);
+  const _$SignInExceptionState(this.appException);
 
   @override
-  final String errorMessage;
+  final AppException appException;
 
   @override
   String toString() {
-    return 'SignInState.exception(errorMessage: $errorMessage)';
+    return 'SignInState.exception(appException: $appException)';
   }
 
   @override
@@ -397,12 +397,12 @@ class _$SignInExceptionState implements SignInExceptionState {
         (other.runtimeType == runtimeType &&
             other is _$SignInExceptionState &&
             const DeepCollectionEquality()
-                .equals(other.errorMessage, errorMessage));
+                .equals(other.appException, appException));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+      runtimeType, const DeepCollectionEquality().hash(appException));
 
   @JsonKey(ignore: true)
   @override
@@ -415,10 +415,10 @@ class _$SignInExceptionState implements SignInExceptionState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(String errorMessage) exception,
+    required TResult Function(AppException appException) exception,
     required TResult Function(SignInResult result) success,
   }) {
-    return exception(errorMessage);
+    return exception(appException);
   }
 
   @override
@@ -426,10 +426,10 @@ class _$SignInExceptionState implements SignInExceptionState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
   }) {
-    return exception?.call(errorMessage);
+    return exception?.call(appException);
   }
 
   @override
@@ -437,12 +437,12 @@ class _$SignInExceptionState implements SignInExceptionState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
     required TResult orElse(),
   }) {
     if (exception != null) {
-      return exception(errorMessage);
+      return exception(appException);
     }
     return orElse();
   }
@@ -486,10 +486,10 @@ class _$SignInExceptionState implements SignInExceptionState {
 }
 
 abstract class SignInExceptionState implements SignInState {
-  const factory SignInExceptionState(final String errorMessage) =
+  const factory SignInExceptionState(final AppException appException) =
       _$SignInExceptionState;
 
-  String get errorMessage => throw _privateConstructorUsedError;
+  AppException get appException => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$SignInExceptionStateCopyWith<_$SignInExceptionState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -563,7 +563,7 @@ class _$SignInSuccessState implements SignInSuccessState {
   TResult when<TResult extends Object?>({
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(String errorMessage) exception,
+    required TResult Function(AppException appException) exception,
     required TResult Function(SignInResult result) success,
   }) {
     return success(result);
@@ -574,7 +574,7 @@ class _$SignInSuccessState implements SignInSuccessState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
   }) {
     return success?.call(result);
@@ -585,7 +585,7 @@ class _$SignInSuccessState implements SignInSuccessState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
-    TResult Function(String errorMessage)? exception,
+    TResult Function(AppException appException)? exception,
     TResult Function(SignInResult result)? success,
     required TResult orElse(),
   }) {

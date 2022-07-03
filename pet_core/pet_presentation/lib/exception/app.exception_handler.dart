@@ -41,8 +41,8 @@ class AppExceptionHandler {
 
     displayMessage =
         // formatter != null
-        //     ? formatter(businessException.errorDetails)
-        //     :
+        // ? formatter(businessException.errorDetails)
+        // :
         S.current.EXCEPTION__UNEXPECTED;
 
     return AppException(displayMessage,

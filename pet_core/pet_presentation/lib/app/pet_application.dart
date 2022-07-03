@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_builder_validators/localization/l10n.dart';
 import 'package:pet_presentation/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import './routes.dart';
@@ -15,12 +16,14 @@ class _PetApplicationState extends State<PetApplication> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routeInformationParser: router.routeInformationParser,
+      debugShowCheckedModeBanner: false,
       routerDelegate: router.routerDelegate,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
+        FormBuilderLocalizations.delegate
       ],
       supportedLocales: S.delegate.supportedLocales,
     );

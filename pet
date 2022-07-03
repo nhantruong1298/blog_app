@@ -3,12 +3,11 @@
 # validatedModule = 0
 
 runScript(){    
-    cd $appDir"/pet_core" && echoInfo  "Execute commands in PET APP" && executeCommands 
+    cd $appDir"/pet_core" && echoInfo  "Execute commands in Pet Core" && executeCommands 
     cd $appDir"/pet_core/pet_presentation" && echoInfo "Execute commands in Presentation" && executeCommands
     cd $appDir"/pet_core/pet_domain" && echoInfo "Execute commands in Domain" && executeCommands
     cd $appDir"/pet_core/pet_data" && echoInfo "Execute commands in Data" && executeCommands
-    cd $appDir"/pet_app_2" && echoInfo "Execute commands in App v2" && executeCommands
-    cd $appDir     
+    cd $appDir"/pet_app_2" && echoInfo "Execute commands in Pet App v2" && executeCommands   
 }
 
 executeCommands(){

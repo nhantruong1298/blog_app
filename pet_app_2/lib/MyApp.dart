@@ -4,7 +4,7 @@ import 'package:pet_core/pet_core.dart';
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static void initConfig() async {
+  static Future<void> initConfig() async {
     await PetCore.initConfig();
   }
 
