@@ -19,6 +19,7 @@ dependencies:
   json_annotation: ^4.5.0
   logger: ^1.1.0
   shared_preferences: ^2.0.15
+  connectivity_plus: ^2.3.5
 
 
 dev_dependencies:
