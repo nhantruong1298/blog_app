@@ -1,15 +1,13 @@
 #!/bin/bash
 #### ALL FUNCTIONS
-validatedModule = 0
+# validatedModule = 0
 
-runScript(){
-    cd $appDir"/luna_core" && echoInfo  "Execute commands in LUNA APP" && executeCommands
-    cd $appDir"/luna_core/luna_presentation" && echoInfo "Execute commands in Presentation" && executeCommands
-    cd $appDir"/luna_core/luna_presentation_neo" && echoInfo "Execute commands in Presentation" && executeCommands
-    cd $appDir"/luna_core/luna_domain" && echoInfo "Execute commands in Domain" && executeCommands
-    cd $appDir"/luna_core/luna_data" && echoInfo "Execute commands in Data" && executeCommands
-    cd $appDir"/luna_app" && echoInfo "Execute commands in App" && executeCommands
-    
+runScript(){    
+    cd $appDir"/pet_core" && echoInfo  "Execute commands in Pet Core" && executeCommands 
+    cd $appDir"/pet_core/pet_presentation" && echoInfo "Execute commands in Presentation" && executeCommands
+    cd $appDir"/pet_core/pet_domain" && echoInfo "Execute commands in Domain" && executeCommands
+    cd $appDir"/pet_core/pet_data" && echoInfo "Execute commands in Data" && executeCommands
+    cd $appDir"/pet_app_2" && echoInfo "Execute commands in Pet App v2" && executeCommands   
 }
 
 executeCommands(){
