@@ -24,6 +24,9 @@ dependencies:
   modal_bottom_sheet: ^2.1.0 
   after_layout: ^1.2.0
   clay_containers: ^0.3.2
+  auto_size_text: ^3.0.0
+  equatable: ^2.0.3
+  flutter_svg: ^1.1.1+1
 
 dev_dependencies:
   flutter_test:

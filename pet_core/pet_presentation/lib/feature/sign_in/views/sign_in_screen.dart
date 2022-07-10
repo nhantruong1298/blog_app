@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:pet_presentation/app/routes.dart';
 import 'package:pet_presentation/base/base_screen.dart';
+import 'package:pet_presentation/feature/dashboard/all.dart';
 import 'package:pet_presentation/feature/sign_in/cubit/sign_in_cubit.dart';
 import 'package:pet_presentation/generated/l10n.dart';
 import 'package:pet_presentation/resources/app_colors.dart';
@@ -75,6 +77,7 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
   Widget _buildPasswordField() {
     return PasswordInputField(
       name: PASSWORD_KEY,
+      initialValue: '12345678',
       labelText: S.current.SIGN_IN__PASSWORD,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: FormBuilderValidators.compose([
@@ -88,6 +91,7 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
     return TextInputField(
       name: USER_NAME_KEY,
       labelText: S.current.SIGN_IN__EMAIL,
+      initialValue: 'test@gmail.co',
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: FormBuilderValidators.compose([
         FormBuilderValidators.required(context),

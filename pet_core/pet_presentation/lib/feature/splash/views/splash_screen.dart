@@ -34,12 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: double.infinity,
-            height: 200,
-            decoration: BoxDecoration(
-                image: DecorationImage(image: Assets.images.logoPetApp)),
-          ),
+          Assets.images.logoPetApp.image(width: 200, height: 200),
           Container(
               padding: const EdgeInsets.symmetric(
                   horizontal: 2 * AppDimensions.defaultPadding,

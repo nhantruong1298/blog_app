@@ -27,7 +27,7 @@ class ServiceManager {
   }
 
   Future<FireBaseAuthResult> signInWithEmailAndPassword(
-      String email, String password) {
-    return _fireBaseService.signInWithEmailAndPassword(email, password);
+      String email, String password) async{
+    return await _fireBaseService.signInWithEmailAndPassword(email, password);
   }
 }

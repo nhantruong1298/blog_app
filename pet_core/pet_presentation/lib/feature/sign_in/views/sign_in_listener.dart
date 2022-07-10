@@ -6,6 +6,9 @@ extension SignInListener on _SignInScreenState {
         loading: (isLoading) => toggleLoading(isLoading),
         exception: (appException) =>
             showErrorDialogByAppException(appException),
+        success: (result) {
+          router.goNamed(DashboardModule.routeName);
+        },
         orElse: () {});
   }
 }

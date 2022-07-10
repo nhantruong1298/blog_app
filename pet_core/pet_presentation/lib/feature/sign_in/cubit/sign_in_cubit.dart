@@ -22,6 +22,7 @@ class SignInCubit extends Cubit<SignInState> {
       final result = await _firebaseAuthRepository.signInWithEmailAndPassword(
           userName, password);
 
+      emit(SignInSuccessState(SignInResult()));
       //print(result.userName);
     } catch (error, stackTrace) {
       final appException =
