@@ -17,10 +17,10 @@ class AppColors {
   // static Color get primaryColor =>
   //     LunaApplication.appConfig().primaryColor ?? const Color(0xFF4F32E2);
 
-  static const primaryColor500 = Color(0xFF48d4ff);
-  static const primaryColor400 = Color(0xFF827DF1);
-  static const primaryColor300 = Color(0xFF9C99F8);
-  static const primaryColor200 = Color(0xFFBEBCFC);
+  static const primaryColor500 = Color(0xFF1877f2);
+  static const primaryColor400 = Color(0xFF3e8df4);
+  static const primaryColor300 = Color(0xFF6ea9f7);
+  static const primaryColor200 = Color(0xFF9fc6f9);
   static const primaryColor100 = Color(0xFFDEDDFD);
 
   static const secondaryColor = Color(0xFF2E3479);

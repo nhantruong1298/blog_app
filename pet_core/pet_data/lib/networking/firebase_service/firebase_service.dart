@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pet_data/mapper/error_data_mapper.dart';
 import 'package:pet_domain/exception/business_exception.dart';
@@ -16,7 +15,7 @@ class FireBaseService {
       final result = await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
 
-      return FireBaseAuthResult(userName: result.user?.displayName);
+      return FireBaseAuthResult(userName: result.user?.email);
     } catch (error) {
       throw _mapError(error);
     }

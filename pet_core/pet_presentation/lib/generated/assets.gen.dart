@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/avarta-icon.svg
+  SvgGenImage get avartaIcon =>
+      const SvgGenImage('assets/images/avarta-icon.svg');
+
   /// File path: assets/images/home-icon.svg
   SvgGenImage get homeIcon => const SvgGenImage('assets/images/home-icon.svg');
 

@@ -15,6 +15,8 @@ import 'package:pet_presentation/widgets/commons/button/button.dart';
 import 'package:pet_presentation/widgets/commons/button/button_type.dart';
 import 'package:pet_presentation/widgets/commons/layouts/basic_layout.dart';
 import 'package:pet_presentation/widgets/commons/layouts/keyboard_avoid_scroll_view.dart';
+import 'package:pet_presentation/widgets/commons/typography/body_text.dart';
+import 'package:pet_presentation/widgets/commons/typography/button_text.dart';
 import 'package:pet_presentation/widgets/commons/typography/heading_text.dart';
 import 'package:pet_presentation/widgets/input/password_field.dart';
 import 'package:pet_presentation/widgets/input/text_input_field.dart';
@@ -61,6 +63,7 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
         key: _formKey,
         child: KeyboardAvoidScrollView(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacing(3),
               Heading3Text(S.current.SIGN_IN__TEXT,
@@ -70,7 +73,22 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
               const Spacing(1),
               _buildPasswordField(),
               const Spacing(2),
-              _buildLoginButton()
+              _buildLoginButton(),
+              const Spacing(1.5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                      child: BodyLText('Forgot Password'), onPressed: () {}),
+                ],
+              ),
+              const Spacing(1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(child: BodyLText('Sign up'), onPressed: () {}),
+                ],
+              )
             ]));
   }
 
@@ -123,6 +141,7 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
 
                   if (isValid == true) {
                     signInCubit.onSignInPressed(
+                      context,
                         _formKey.currentState
                                 ?.getRawValue<String>(USER_NAME_KEY) ??
                             '',

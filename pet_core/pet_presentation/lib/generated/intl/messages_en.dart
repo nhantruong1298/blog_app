@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "COMMON__CANCEL_BUTTON": MessageLookupByLibrary.simpleMessage("Cancel"),
         "COMMON__CONFIRM_BUTTON":
             MessageLookupByLibrary.simpleMessage("Confirm"),
+        "COMMON__ERROR_TITLE_TEXT":
+            MessageLookupByLibrary.simpleMessage("Error"),
         "COMMON__OK_BUTTON": MessageLookupByLibrary.simpleMessage("OK"),
         "EXCEPTION__UNEXPECTED":
             MessageLookupByLibrary.simpleMessage("Unexpected error"),

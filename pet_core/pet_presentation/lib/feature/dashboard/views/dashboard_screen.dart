@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pet_presentation/base/base_screen.dart';
 import 'package:pet_presentation/feature/dashboard/cubit/dashboard_cubit.dart';
+import 'package:pet_presentation/feature/utils/size_config.dart';
 import 'package:pet_presentation/resources/app_colors.dart';
 import 'package:pet_presentation/widgets/layouts/tab_layout/tab_layout.dart';
 part 'dashboard_listener.dart';
@@ -15,8 +16,6 @@ class DashBoardScreen extends StatefulWidget {
 
 class _DashBoardScreenState extends BaseScreenState<DashBoardScreen>
     with SingleTickerProviderStateMixin {
-  // List<Widget> _screens = [];
-  // List<FABBottomAppBarItem> _navBarsItems = [];
   TabController? _tabController;
 
   DashboardCubit get dashboardCubit => BlocProvider.of<DashboardCubit>(context);
@@ -30,22 +29,15 @@ class _DashBoardScreenState extends BaseScreenState<DashBoardScreen>
   }
 
   @override
-  void dispose() {
-    _tabController?.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget builder(BuildContext context) {
+    SizeConfig.init(context);
     return BlocConsumer<DashboardCubit, DashboardState>(
       listener: listener,
+      buildWhen: (_, current) => current is DashboardInitScreen,
       builder: (_, state) {
         if (state is! DashboardInitScreen) {
           return const SizedBox();
         }
-
-        _tabController =
-            TabController(length: state.screens.length, vsync: this);
 
         return TabLayout(
           darkMode: true,

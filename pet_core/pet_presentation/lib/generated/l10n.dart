@@ -119,6 +119,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Error`
+  String get COMMON__ERROR_TITLE_TEXT {
+    return Intl.message(
+      'Error',
+      name: 'COMMON__ERROR_TITLE_TEXT',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

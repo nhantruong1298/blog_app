@@ -5,5 +5,6 @@
     "COMMON__CANCEL_BUTTON":"Cancel",
     "COMMON__OK_BUTTON":"OK",
     "COMMON__CONFIRM_BUTTON":"Confirm",
-    "EXCEPTION__UNEXPECTED":"Unexpected error"
+    "EXCEPTION__UNEXPECTED":"Unexpected error",
+    "COMMON__ERROR_TITLE_TEXT": "Error"
 }

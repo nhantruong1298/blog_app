@@ -15,6 +15,7 @@ class AuthenticationState extends Equatable {
   @override
   List<Object?> get props => [
         isSignedIn,
+        firebaseAuthResult
       ];
 
   AuthenticationState copyWith({

@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:pet_presentation/exception/app.exception_handler.dart';
 import 'package:pet_presentation/exception/app_exception.dart';
+import 'package:pet_presentation/generated/l10n.dart';
 import 'package:pet_presentation/injectors/all.dart';
 import 'package:pet_presentation/resources/app_colors.dart';
 import 'package:pet_presentation/resources/app_constants.dart';
@@ -113,7 +114,7 @@ abstract class BaseScreenState<T extends StatefulWidget> extends State<T>
     errorDialog = ErrorDialogBuilder(
         exception: exception,
         title: HeadingText(
-          "S.current.COMMON__ERROR_TITLE_TEXT",
+          S.current.COMMON__ERROR_TITLE_TEXT,
           color: AppColors.textColor,
         ),
         onCloseButtonPress: () =>

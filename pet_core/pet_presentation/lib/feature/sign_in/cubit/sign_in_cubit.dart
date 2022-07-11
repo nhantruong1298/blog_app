@@ -1,9 +1,12 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pet_domain/model/authentication/sign_in_result.dart';
 import 'package:pet_domain/repository/firebase_repository.dart';
 import 'package:pet_presentation/exception/app.exception_handler.dart';
 import 'package:pet_presentation/exception/app_exception.dart';
+import 'package:pet_presentation/feature/authentication/cubit/authentication_cubit.dart';
 import 'package:pet_presentation/injectors/all.dart';
 part 'sign_in_state.dart';
 part 'sign_in_cubit.freezed.dart';
@@ -16,11 +19,15 @@ class SignInCubit extends Cubit<SignInState> {
     _appExceptionHandler = getIt<AppExceptionHandler>();
   }
 
-  void onSignInPressed(String userName, String password) async {
+  void onSignInPressed(
+      BuildContext context, String userName, String password) async {
     emit(const LoadingState(true));
     try {
       final result = await _firebaseAuthRepository.signInWithEmailAndPassword(
           userName, password);
+
+      BlocProvider.of<AuthenticationCubit>(context).emit(
+          AuthenticationState(isSignedIn: true, firebaseAuthResult: result));
 
       emit(SignInSuccessState(SignInResult()));
       //print(result.userName);

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:meta/meta.dart';
+import 'package:pet_presentation/feature/home/views/home_screen.dart';
 import 'package:pet_presentation/generated/assets.gen.dart';
 import 'package:pet_presentation/widgets/icons/app_icon.dart';
 import 'package:pet_presentation/widgets/layouts/tab_layout/fab_bottom_app_bar.dart';
@@ -19,30 +19,27 @@ class DashboardCubit extends Cubit<DashboardState> {
     const double inActiveIconSize = 22;
     const double activeIconSize = 24;
 
-    List<Widget> screens = [
-      Container(),
-      Container()
-    ];
+    List<Widget> screens = [const HomeScreen(), Container()];
 
     List<FABBottomAppBarItem> items = [
       FABBottomAppBarItem(
         icon: AppIcon.asset(
-         Assets.images.homeIcon,
+          Assets.images.homeIcon,
           size: inActiveIconSize,
         ),
         activeIcon: AppIcon.asset(
-           Assets.images.homeIcon,
+          Assets.images.homeIcon,
           size: activeIconSize,
         ),
         title: 'Home',
       ),
-       FABBottomAppBarItem(
+      FABBottomAppBarItem(
         icon: AppIcon.asset(
-         Assets.images.homeIcon,
+          Assets.images.homeIcon,
           size: inActiveIconSize,
         ),
-         activeIcon: AppIcon.asset(
-           Assets.images.homeIcon,
+        activeIcon: AppIcon.asset(
+          Assets.images.homeIcon,
           size: activeIconSize,
         ),
         title: 'Home',

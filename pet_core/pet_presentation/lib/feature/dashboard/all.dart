@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pet_presentation/feature/dashboard/cubit/dashboard_cubit.dart';
 import 'package:pet_presentation/feature/dashboard/views/dashboard_screen.dart';
+import 'package:pet_presentation/feature/home/cubit/home_cubit.dart';
 
 class DashboardModule {
   static const String routeName = '/dashboard';
@@ -12,8 +13,11 @@ class DashboardModule {
       path: routePath,
       name: routeName,
       builder: (context, state) {
-        return BlocProvider(
-          create: (context) => DashboardCubit(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => DashboardCubit()),
+            BlocProvider(create: (_) => HomeCubit()),
+          ],
           child: const DashBoardScreen(),
         );
       },
