@@ -26,10 +26,10 @@ mixin _$SignInState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(SignInResult result)? success,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(SignInResult result)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$SignInState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(SignInExceptionState value)? exception,
-    TResult Function(SignInSuccessState value)? success,
+    TResult? Function(SignInInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(SignInExceptionState value)? exception,
+    TResult? Function(SignInSuccessState value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,16 +72,18 @@ mixin _$SignInState {
 abstract class $SignInStateCopyWith<$Res> {
   factory $SignInStateCopyWith(
           SignInState value, $Res Function(SignInState) then) =
-      _$SignInStateCopyWithImpl<$Res>;
+      _$SignInStateCopyWithImpl<$Res, SignInState>;
 }
 
 /// @nodoc
-class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
+class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
+    implements $SignInStateCopyWith<$Res> {
   _$SignInStateCopyWithImpl(this._value, this._then);
 
-  final SignInState _value;
   // ignore: unused_field
-  final $Res Function(SignInState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -93,14 +95,11 @@ abstract class _$$SignInInitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$SignInInitialCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignInInitial>
     implements _$$SignInInitialCopyWith<$Res> {
   __$$SignInInitialCopyWithImpl(
       _$SignInInitial _value, $Res Function(_$SignInInitial) _then)
-      : super(_value, (v) => _then(v as _$SignInInitial));
-
-  @override
-  _$SignInInitial get _value => super._value as _$SignInInitial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -136,10 +135,10 @@ class _$SignInInitial implements SignInInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(SignInResult result)? success,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(SignInResult result)? success,
   }) {
     return init?.call();
   }
@@ -173,10 +172,10 @@ class _$SignInInitial implements SignInInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(SignInExceptionState value)? exception,
-    TResult Function(SignInSuccessState value)? success,
+    TResult? Function(SignInInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(SignInExceptionState value)? exception,
+    TResult? Function(SignInSuccessState value)? success,
   }) {
     return init?.call(this);
   }
@@ -206,25 +205,25 @@ abstract class _$$LoadingStateCopyWith<$Res> {
   factory _$$LoadingStateCopyWith(
           _$LoadingState value, $Res Function(_$LoadingState) then) =
       __$$LoadingStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isLoading});
 }
 
 /// @nodoc
-class __$$LoadingStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
+class __$$LoadingStateCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$LoadingState>
     implements _$$LoadingStateCopyWith<$Res> {
   __$$LoadingStateCopyWithImpl(
       _$LoadingState _value, $Res Function(_$LoadingState) _then)
-      : super(_value, (v) => _then(v as _$LoadingState));
+      : super(_value, _then);
 
-  @override
-  _$LoadingState get _value => super._value as _$LoadingState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
+    Object? isLoading = null,
   }) {
     return _then(_$LoadingState(
-      isLoading == freezed
+      null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -250,15 +249,16 @@ class _$LoadingState implements LoadingState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingState &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isLoading));
+  int get hashCode => Object.hash(runtimeType, isLoading);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingStateCopyWith<_$LoadingState> get copyWith =>
       __$$LoadingStateCopyWithImpl<_$LoadingState>(this, _$identity);
 
@@ -276,10 +276,10 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(SignInResult result)? success,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(SignInResult result)? success,
   }) {
     return loading?.call(isLoading);
   }
@@ -313,10 +313,10 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(SignInExceptionState value)? exception,
-    TResult Function(SignInSuccessState value)? success,
+    TResult? Function(SignInInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(SignInExceptionState value)? exception,
+    TResult? Function(SignInSuccessState value)? success,
   }) {
     return loading?.call(this);
   }
@@ -340,7 +340,7 @@ class _$LoadingState implements LoadingState {
 abstract class LoadingState implements SignInState {
   const factory LoadingState(final bool isLoading) = _$LoadingState;
 
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @JsonKey(ignore: true)
   _$$LoadingStateCopyWith<_$LoadingState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -351,26 +351,25 @@ abstract class _$$SignInExceptionStateCopyWith<$Res> {
   factory _$$SignInExceptionStateCopyWith(_$SignInExceptionState value,
           $Res Function(_$SignInExceptionState) then) =
       __$$SignInExceptionStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({AppException appException});
 }
 
 /// @nodoc
 class __$$SignInExceptionStateCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignInExceptionState>
     implements _$$SignInExceptionStateCopyWith<$Res> {
   __$$SignInExceptionStateCopyWithImpl(_$SignInExceptionState _value,
       $Res Function(_$SignInExceptionState) _then)
-      : super(_value, (v) => _then(v as _$SignInExceptionState));
+      : super(_value, _then);
 
-  @override
-  _$SignInExceptionState get _value => super._value as _$SignInExceptionState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appException = freezed,
+    Object? appException = null,
   }) {
     return _then(_$SignInExceptionState(
-      appException == freezed
+      null == appException
           ? _value.appException
           : appException // ignore: cast_nullable_to_non_nullable
               as AppException,
@@ -396,16 +395,16 @@ class _$SignInExceptionState implements SignInExceptionState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInExceptionState &&
-            const DeepCollectionEquality()
-                .equals(other.appException, appException));
+            (identical(other.appException, appException) ||
+                other.appException == appException));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(appException));
+  int get hashCode => Object.hash(runtimeType, appException);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SignInExceptionStateCopyWith<_$SignInExceptionState> get copyWith =>
       __$$SignInExceptionStateCopyWithImpl<_$SignInExceptionState>(
           this, _$identity);
@@ -424,10 +423,10 @@ class _$SignInExceptionState implements SignInExceptionState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(SignInResult result)? success,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(SignInResult result)? success,
   }) {
     return exception?.call(appException);
   }
@@ -461,10 +460,10 @@ class _$SignInExceptionState implements SignInExceptionState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(SignInExceptionState value)? exception,
-    TResult Function(SignInSuccessState value)? success,
+    TResult? Function(SignInInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(SignInExceptionState value)? exception,
+    TResult? Function(SignInSuccessState value)? success,
   }) {
     return exception?.call(this);
   }
@@ -489,7 +488,7 @@ abstract class SignInExceptionState implements SignInState {
   const factory SignInExceptionState(final AppException appException) =
       _$SignInExceptionState;
 
-  AppException get appException => throw _privateConstructorUsedError;
+  AppException get appException;
   @JsonKey(ignore: true)
   _$$SignInExceptionStateCopyWith<_$SignInExceptionState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -500,26 +499,25 @@ abstract class _$$SignInSuccessStateCopyWith<$Res> {
   factory _$$SignInSuccessStateCopyWith(_$SignInSuccessState value,
           $Res Function(_$SignInSuccessState) then) =
       __$$SignInSuccessStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({SignInResult result});
 }
 
 /// @nodoc
 class __$$SignInSuccessStateCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res>
+    extends _$SignInStateCopyWithImpl<$Res, _$SignInSuccessState>
     implements _$$SignInSuccessStateCopyWith<$Res> {
   __$$SignInSuccessStateCopyWithImpl(
       _$SignInSuccessState _value, $Res Function(_$SignInSuccessState) _then)
-      : super(_value, (v) => _then(v as _$SignInSuccessState));
+      : super(_value, _then);
 
-  @override
-  _$SignInSuccessState get _value => super._value as _$SignInSuccessState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? result = freezed,
+    Object? result = null,
   }) {
     return _then(_$SignInSuccessState(
-      result == freezed
+      null == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
               as SignInResult,
@@ -545,15 +543,15 @@ class _$SignInSuccessState implements SignInSuccessState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInSuccessState &&
-            const DeepCollectionEquality().equals(other.result, result));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(result));
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$SignInSuccessStateCopyWith<_$SignInSuccessState> get copyWith =>
       __$$SignInSuccessStateCopyWithImpl<_$SignInSuccessState>(
           this, _$identity);
@@ -572,10 +570,10 @@ class _$SignInSuccessState implements SignInSuccessState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(SignInResult result)? success,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(SignInResult result)? success,
   }) {
     return success?.call(result);
   }
@@ -609,10 +607,10 @@ class _$SignInSuccessState implements SignInSuccessState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SignInInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(SignInExceptionState value)? exception,
-    TResult Function(SignInSuccessState value)? success,
+    TResult? Function(SignInInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(SignInExceptionState value)? exception,
+    TResult? Function(SignInSuccessState value)? success,
   }) {
     return success?.call(this);
   }
@@ -637,7 +635,7 @@ abstract class SignInSuccessState implements SignInState {
   const factory SignInSuccessState(final SignInResult result) =
       _$SignInSuccessState;
 
-  SignInResult get result => throw _privateConstructorUsedError;
+  SignInResult get result;
   @JsonKey(ignore: true)
   _$$SignInSuccessStateCopyWith<_$SignInSuccessState> get copyWith =>
       throw _privateConstructorUsedError;

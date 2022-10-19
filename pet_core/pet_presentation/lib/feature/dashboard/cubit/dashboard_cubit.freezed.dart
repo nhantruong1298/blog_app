@@ -26,8 +26,8 @@ mixin _$DashboardState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(
+    TResult? Function()? init,
+    TResult? Function(
             List<Widget> screens, List<FABBottomAppBarItem> navBarItems)?
         initScreen,
   }) =>
@@ -49,8 +49,8 @@ mixin _$DashboardState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DashboardInitial value)? init,
-    TResult Function(DashboardInitScreen value)? initScreen,
+    TResult? Function(DashboardInitial value)? init,
+    TResult? Function(DashboardInitScreen value)? initScreen,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,17 +66,18 @@ mixin _$DashboardState {
 abstract class $DashboardStateCopyWith<$Res> {
   factory $DashboardStateCopyWith(
           DashboardState value, $Res Function(DashboardState) then) =
-      _$DashboardStateCopyWithImpl<$Res>;
+      _$DashboardStateCopyWithImpl<$Res, DashboardState>;
 }
 
 /// @nodoc
-class _$DashboardStateCopyWithImpl<$Res>
+class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
     implements $DashboardStateCopyWith<$Res> {
   _$DashboardStateCopyWithImpl(this._value, this._then);
 
-  final DashboardState _value;
   // ignore: unused_field
-  final $Res Function(DashboardState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -88,14 +89,11 @@ abstract class _$$DashboardInitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$DashboardInitialCopyWithImpl<$Res>
-    extends _$DashboardStateCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res, _$DashboardInitial>
     implements _$$DashboardInitialCopyWith<$Res> {
   __$$DashboardInitialCopyWithImpl(
       _$DashboardInitial _value, $Res Function(_$DashboardInitial) _then)
-      : super(_value, (v) => _then(v as _$DashboardInitial));
-
-  @override
-  _$DashboardInitial get _value => super._value as _$DashboardInitial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -131,8 +129,8 @@ class _$DashboardInitial implements DashboardInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(
+    TResult? Function()? init,
+    TResult? Function(
             List<Widget> screens, List<FABBottomAppBarItem> navBarItems)?
         initScreen,
   }) {
@@ -166,8 +164,8 @@ class _$DashboardInitial implements DashboardInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DashboardInitial value)? init,
-    TResult Function(DashboardInitScreen value)? initScreen,
+    TResult? Function(DashboardInitial value)? init,
+    TResult? Function(DashboardInitScreen value)? initScreen,
   }) {
     return init?.call(this);
   }
@@ -195,31 +193,30 @@ abstract class _$$DashboardInitScreenCopyWith<$Res> {
   factory _$$DashboardInitScreenCopyWith(_$DashboardInitScreen value,
           $Res Function(_$DashboardInitScreen) then) =
       __$$DashboardInitScreenCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Widget> screens, List<FABBottomAppBarItem> navBarItems});
 }
 
 /// @nodoc
 class __$$DashboardInitScreenCopyWithImpl<$Res>
-    extends _$DashboardStateCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res, _$DashboardInitScreen>
     implements _$$DashboardInitScreenCopyWith<$Res> {
   __$$DashboardInitScreenCopyWithImpl(
       _$DashboardInitScreen _value, $Res Function(_$DashboardInitScreen) _then)
-      : super(_value, (v) => _then(v as _$DashboardInitScreen));
+      : super(_value, _then);
 
-  @override
-  _$DashboardInitScreen get _value => super._value as _$DashboardInitScreen;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? screens = freezed,
-    Object? navBarItems = freezed,
+    Object? screens = null,
+    Object? navBarItems = null,
   }) {
     return _then(_$DashboardInitScreen(
-      screens == freezed
+      null == screens
           ? _value._screens
           : screens // ignore: cast_nullable_to_non_nullable
               as List<Widget>,
-      navBarItems == freezed
+      null == navBarItems
           ? _value._navBarItems
           : navBarItems // ignore: cast_nullable_to_non_nullable
               as List<FABBottomAppBarItem>,
@@ -272,6 +269,7 @@ class _$DashboardInitScreen implements DashboardInitScreen {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DashboardInitScreenCopyWith<_$DashboardInitScreen> get copyWith =>
       __$$DashboardInitScreenCopyWithImpl<_$DashboardInitScreen>(
           this, _$identity);
@@ -290,8 +288,8 @@ class _$DashboardInitScreen implements DashboardInitScreen {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(
+    TResult? Function()? init,
+    TResult? Function(
             List<Widget> screens, List<FABBottomAppBarItem> navBarItems)?
         initScreen,
   }) {
@@ -325,8 +323,8 @@ class _$DashboardInitScreen implements DashboardInitScreen {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(DashboardInitial value)? init,
-    TResult Function(DashboardInitScreen value)? initScreen,
+    TResult? Function(DashboardInitial value)? init,
+    TResult? Function(DashboardInitScreen value)? initScreen,
   }) {
     return initScreen?.call(this);
   }
@@ -349,9 +347,8 @@ abstract class DashboardInitScreen implements DashboardState {
   const factory DashboardInitScreen(final List<Widget> screens,
       final List<FABBottomAppBarItem> navBarItems) = _$DashboardInitScreen;
 
-  List<Widget> get screens => throw _privateConstructorUsedError;
-  List<FABBottomAppBarItem> get navBarItems =>
-      throw _privateConstructorUsedError;
+  List<Widget> get screens;
+  List<FABBottomAppBarItem> get navBarItems;
   @JsonKey(ignore: true)
   _$$DashboardInitScreenCopyWith<_$DashboardInitScreen> get copyWith =>
       throw _privateConstructorUsedError;

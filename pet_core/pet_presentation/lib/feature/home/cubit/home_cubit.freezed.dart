@@ -26,10 +26,10 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(String userName)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(HomeExceptionState value)? exception,
-    TResult Function(HomeLoadedState value)? loaded,
+    TResult? Function(HomeInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(HomeExceptionState value)? exception,
+    TResult? Function(HomeLoadedState value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,16 +71,18 @@ mixin _$HomeState {
 /// @nodoc
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res>;
+      _$HomeStateCopyWithImpl<$Res, HomeState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
+class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
+    implements $HomeStateCopyWith<$Res> {
   _$HomeStateCopyWithImpl(this._value, this._then);
 
-  final HomeState _value;
   // ignore: unused_field
-  final $Res Function(HomeState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -91,14 +93,12 @@ abstract class _$$HomeInitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$HomeInitialCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+class __$$HomeInitialCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeInitial>
     implements _$$HomeInitialCopyWith<$Res> {
   __$$HomeInitialCopyWithImpl(
       _$HomeInitial _value, $Res Function(_$HomeInitial) _then)
-      : super(_value, (v) => _then(v as _$HomeInitial));
-
-  @override
-  _$HomeInitial get _value => super._value as _$HomeInitial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,10 +134,10 @@ class _$HomeInitial implements HomeInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(String userName)? loaded,
   }) {
     return init?.call();
   }
@@ -171,10 +171,10 @@ class _$HomeInitial implements HomeInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(HomeExceptionState value)? exception,
-    TResult Function(HomeLoadedState value)? loaded,
+    TResult? Function(HomeInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(HomeExceptionState value)? exception,
+    TResult? Function(HomeLoadedState value)? loaded,
   }) {
     return init?.call(this);
   }
@@ -204,25 +204,25 @@ abstract class _$$LoadingStateCopyWith<$Res> {
   factory _$$LoadingStateCopyWith(
           _$LoadingState value, $Res Function(_$LoadingState) then) =
       __$$LoadingStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isLoading});
 }
 
 /// @nodoc
-class __$$LoadingStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+class __$$LoadingStateCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$LoadingState>
     implements _$$LoadingStateCopyWith<$Res> {
   __$$LoadingStateCopyWithImpl(
       _$LoadingState _value, $Res Function(_$LoadingState) _then)
-      : super(_value, (v) => _then(v as _$LoadingState));
+      : super(_value, _then);
 
-  @override
-  _$LoadingState get _value => super._value as _$LoadingState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
+    Object? isLoading = null,
   }) {
     return _then(_$LoadingState(
-      isLoading == freezed
+      null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -248,15 +248,16 @@ class _$LoadingState implements LoadingState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadingState &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isLoading));
+  int get hashCode => Object.hash(runtimeType, isLoading);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$LoadingStateCopyWith<_$LoadingState> get copyWith =>
       __$$LoadingStateCopyWithImpl<_$LoadingState>(this, _$identity);
 
@@ -274,10 +275,10 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(String userName)? loaded,
   }) {
     return loading?.call(isLoading);
   }
@@ -311,10 +312,10 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(HomeExceptionState value)? exception,
-    TResult Function(HomeLoadedState value)? loaded,
+    TResult? Function(HomeInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(HomeExceptionState value)? exception,
+    TResult? Function(HomeLoadedState value)? loaded,
   }) {
     return loading?.call(this);
   }
@@ -338,7 +339,7 @@ class _$LoadingState implements LoadingState {
 abstract class LoadingState implements HomeState {
   const factory LoadingState(final bool isLoading) = _$LoadingState;
 
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @JsonKey(ignore: true)
   _$$LoadingStateCopyWith<_$LoadingState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -349,26 +350,25 @@ abstract class _$$HomeExceptionStateCopyWith<$Res> {
   factory _$$HomeExceptionStateCopyWith(_$HomeExceptionState value,
           $Res Function(_$HomeExceptionState) then) =
       __$$HomeExceptionStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({AppException appException});
 }
 
 /// @nodoc
 class __$$HomeExceptionStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeExceptionState>
     implements _$$HomeExceptionStateCopyWith<$Res> {
   __$$HomeExceptionStateCopyWithImpl(
       _$HomeExceptionState _value, $Res Function(_$HomeExceptionState) _then)
-      : super(_value, (v) => _then(v as _$HomeExceptionState));
+      : super(_value, _then);
 
-  @override
-  _$HomeExceptionState get _value => super._value as _$HomeExceptionState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? appException = freezed,
+    Object? appException = null,
   }) {
     return _then(_$HomeExceptionState(
-      appException == freezed
+      null == appException
           ? _value.appException
           : appException // ignore: cast_nullable_to_non_nullable
               as AppException,
@@ -394,16 +394,16 @@ class _$HomeExceptionState implements HomeExceptionState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeExceptionState &&
-            const DeepCollectionEquality()
-                .equals(other.appException, appException));
+            (identical(other.appException, appException) ||
+                other.appException == appException));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(appException));
+  int get hashCode => Object.hash(runtimeType, appException);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$HomeExceptionStateCopyWith<_$HomeExceptionState> get copyWith =>
       __$$HomeExceptionStateCopyWithImpl<_$HomeExceptionState>(
           this, _$identity);
@@ -422,10 +422,10 @@ class _$HomeExceptionState implements HomeExceptionState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(String userName)? loaded,
   }) {
     return exception?.call(appException);
   }
@@ -459,10 +459,10 @@ class _$HomeExceptionState implements HomeExceptionState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(HomeExceptionState value)? exception,
-    TResult Function(HomeLoadedState value)? loaded,
+    TResult? Function(HomeInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(HomeExceptionState value)? exception,
+    TResult? Function(HomeLoadedState value)? loaded,
   }) {
     return exception?.call(this);
   }
@@ -487,7 +487,7 @@ abstract class HomeExceptionState implements HomeState {
   const factory HomeExceptionState(final AppException appException) =
       _$HomeExceptionState;
 
-  AppException get appException => throw _privateConstructorUsedError;
+  AppException get appException;
   @JsonKey(ignore: true)
   _$$HomeExceptionStateCopyWith<_$HomeExceptionState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -498,26 +498,25 @@ abstract class _$$HomeLoadedStateCopyWith<$Res> {
   factory _$$HomeLoadedStateCopyWith(
           _$HomeLoadedState value, $Res Function(_$HomeLoadedState) then) =
       __$$HomeLoadedStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({String userName});
 }
 
 /// @nodoc
 class __$$HomeLoadedStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$HomeLoadedState>
     implements _$$HomeLoadedStateCopyWith<$Res> {
   __$$HomeLoadedStateCopyWithImpl(
       _$HomeLoadedState _value, $Res Function(_$HomeLoadedState) _then)
-      : super(_value, (v) => _then(v as _$HomeLoadedState));
+      : super(_value, _then);
 
-  @override
-  _$HomeLoadedState get _value => super._value as _$HomeLoadedState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userName = freezed,
+    Object? userName = null,
   }) {
     return _then(_$HomeLoadedState(
-      userName == freezed
+      null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -543,15 +542,16 @@ class _$HomeLoadedState implements HomeLoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeLoadedState &&
-            const DeepCollectionEquality().equals(other.userName, userName));
+            (identical(other.userName, userName) ||
+                other.userName == userName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(userName));
+  int get hashCode => Object.hash(runtimeType, userName);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$HomeLoadedStateCopyWith<_$HomeLoadedState> get copyWith =>
       __$$HomeLoadedStateCopyWithImpl<_$HomeLoadedState>(this, _$identity);
 
@@ -569,10 +569,10 @@ class _$HomeLoadedState implements HomeLoadedState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function(bool isLoading)? loading,
-    TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult? Function()? init,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(AppException appException)? exception,
+    TResult? Function(String userName)? loaded,
   }) {
     return loaded?.call(userName);
   }
@@ -606,10 +606,10 @@ class _$HomeLoadedState implements HomeLoadedState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeInitial value)? init,
-    TResult Function(LoadingState value)? loading,
-    TResult Function(HomeExceptionState value)? exception,
-    TResult Function(HomeLoadedState value)? loaded,
+    TResult? Function(HomeInitial value)? init,
+    TResult? Function(LoadingState value)? loading,
+    TResult? Function(HomeExceptionState value)? exception,
+    TResult? Function(HomeLoadedState value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -633,7 +633,7 @@ class _$HomeLoadedState implements HomeLoadedState {
 abstract class HomeLoadedState implements HomeState {
   const factory HomeLoadedState(final String userName) = _$HomeLoadedState;
 
-  String get userName => throw _privateConstructorUsedError;
+  String get userName;
   @JsonKey(ignore: true)
   _$$HomeLoadedStateCopyWith<_$HomeLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
