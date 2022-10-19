@@ -27,6 +27,7 @@ class ErrorDataMapper {
   static final Map<String, BusinessExceptionCode> _errorMapper = {
     'user-not-found': BusinessExceptionCode.USER_NOT_FOUND,
     'wrong-password': BusinessExceptionCode.PASSWORD_INVALID,
-    'network-request-failed': BusinessExceptionCode.NETWORK_ERROR
+    'network-request-failed': BusinessExceptionCode.NETWORK_ERROR,
+    
   };
 }

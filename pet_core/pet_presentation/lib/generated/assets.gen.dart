@@ -14,9 +14,17 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/add-comment-icon.svg
+  SvgGenImage get addCommentIcon =>
+      const SvgGenImage('assets/images/add-comment-icon.svg');
+
   /// File path: assets/images/avarta-icon.svg
   SvgGenImage get avartaIcon =>
       const SvgGenImage('assets/images/avarta-icon.svg');
+
+  /// File path: assets/images/bg-login.png
+  AssetGenImage get bgLogin =>
+      const AssetGenImage('assets/images/bg-login.png');
 
   /// File path: assets/images/home-icon.svg
   SvgGenImage get homeIcon => const SvgGenImage('assets/images/home-icon.svg');
@@ -24,6 +32,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/logo_pet_app.png
   AssetGenImage get logoPetApp =>
       const AssetGenImage('assets/images/logo_pet_app.png');
+
+  /// File path: assets/images/love-icon.svg
+  SvgGenImage get loveIcon => const SvgGenImage('assets/images/love-icon.svg');
 }
 
 class Assets {

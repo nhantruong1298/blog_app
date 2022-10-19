@@ -48,13 +48,13 @@ class ErrorView extends StatelessWidget {
                         ),
                         child: BodyMText(
                           errorMsg,
-                          style: TextStyle(color: AppColors.textColor),
+                          style: const TextStyle(color: AppColors.textColor),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       ElevatedButton(
                         onPressed: onRetry,
-                        child: Text('Retry'),
+                        child: const Text('Retry'),
                       ),
                     ],
                   ),

@@ -137,9 +137,9 @@ class AppDialogWidgetState extends State<AppDialogWidget>
     return Center(
       child: Container(
         margin: getDialogOuterMargin(),
-        decoration: BoxDecoration(
+        decoration:const BoxDecoration(
           color: AppColors.backgroundColor,
-          borderRadius: const BorderRadius.all(
+          borderRadius:  BorderRadius.all(
               Radius.circular(AppDimensions.defaultRadius)),
         ),
         child: Column(
@@ -202,7 +202,7 @@ class AppDialogWidgetState extends State<AppDialogWidget>
       padding: const EdgeInsets.symmetric(
           vertical: AppDimensions.defaultPadding / 2),
       child: HeadingText(widget.title!,
-          style: TextStyle(
+          style:const TextStyle(
             fontWeight: FontWeight.w700,
             color: AppColors.textColorDark,
           ),

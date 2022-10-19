@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pet_domain/model/authentication/firebase_auth.dart';
 import 'package:pet_presentation/exception/app_exception.dart';

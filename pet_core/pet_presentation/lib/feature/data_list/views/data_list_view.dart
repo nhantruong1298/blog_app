@@ -112,7 +112,7 @@ class _DataLoadingView extends StatelessWidget {
         Container(
           alignment: Alignment.center,
           color: AppColors.backgroundColor,
-          child: CircularLoading(),
+          child: const CircularLoading(),
         );
   }
 
@@ -232,7 +232,7 @@ class _DataReadyView extends StatelessWidget {
                           SizedBox(
                             width: iconSize,
                             height: iconSize,
-                            child: CircularProgressIndicator(
+                            child: const CircularProgressIndicator(
                               backgroundColor: AppColors.backgroundColor,
                               strokeWidth: 3,
                             ),

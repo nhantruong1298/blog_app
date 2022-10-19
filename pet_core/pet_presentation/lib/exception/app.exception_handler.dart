@@ -1,6 +1,5 @@
 // import 'package:flutter/foundation.dart';
 import 'package:pet_domain/exception/business_exception.dart';
-import 'package:pet_domain/exception/business_exception_code.dart';
 import 'package:pet_presentation/exception/app_global_exception_handler.dart';
 import 'package:pet_presentation/generated/l10n.dart';
 import 'app_exception.dart';
@@ -36,8 +35,8 @@ class AppExceptionHandler {
           originalException: businessException,
           exceptionCode: businessException.businessExceptionCode);
     }
-    final formatter =
-        _exceptionMessageMap[businessException.businessExceptionCode];
+    // final String? formatter =
+    //     _exceptionMessageMap[businessException.businessExceptionCode];
 
     displayMessage =
         // formatter != null
@@ -64,4 +63,4 @@ class AppExceptionHandler {
 
 // typedef MapFunction = String Function(List<ExceptionReference>? exDetails);
 
-Map<BusinessExceptionCode, String> _exceptionMessageMap = {};
+// Map<BusinessExceptionCode, String> _exceptionMessageMap = {};

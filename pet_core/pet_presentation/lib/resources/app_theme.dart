@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pet_presentation/widgets/commons/typography/body_text.dart';
-import 'app_dimensions.dart';
 
 import 'app_colors.dart';
+import 'app_dimensions.dart';
 
 class AppThemeStyle {
   static ThemeData getDialogTheme(BuildContext context) =>
@@ -41,7 +41,7 @@ class AppThemeStyle {
   }
 
   static InputDecoration get searchHeaderDecoration {
-    final inputBorder = const UnderlineInputBorder(
+    const inputBorder = UnderlineInputBorder(
       borderSide: BorderSide(color: AppColors.backgroundColor),
     );
 
@@ -187,9 +187,9 @@ class AppThemeStyle {
       color: AppColors.primaryLightColor,
       elevation: 0,
       // systemOverlayStyle: SystemUiOverlayStyle.light,
-      iconTheme: const IconThemeData(color: AppColors.primaryDarkColor),
+      iconTheme:  IconThemeData(color: AppColors.primaryDarkColor),
       titleTextStyle:
-          const TextStyle(color: AppColors.primaryLightColor, fontSize: 18),
+           TextStyle(color: AppColors.primaryLightColor, fontSize: 18),
     );
   }
 

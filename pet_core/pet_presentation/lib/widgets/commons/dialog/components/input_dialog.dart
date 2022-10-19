@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_presentation/generated/l10n.dart';
-import 'package:pet_presentation/resources/app_colors.dart';
 import 'package:pet_presentation/resources/app_dimensions.dart';
-import 'package:pet_presentation/resources/app_theme.dart';
-import 'package:pet_presentation/widgets/commons/typography/body_text.dart';
 
 import '../app_dialog_manager.dart';
 import 'app_dialog_widget.dart';

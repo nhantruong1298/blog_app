@@ -1,10 +1,10 @@
 import 'package:pet_data/networking/service_manager.dart';
 import 'package:pet_domain/model/authentication/firebase_auth.dart';
-import 'package:pet_domain/repository/firebase_repository.dart';
+import 'package:pet_domain/repository/firebase_auth_repository.dart';
 
-class FirebaseRepositoryImpl extends FirebaseRepository {
+class FirebaseAuthRepositoryImpl extends FirebaseAuthRepository {
   final ServiceManager _serviceManager;
-  FirebaseRepositoryImpl(this._serviceManager);
+  FirebaseAuthRepositoryImpl(this._serviceManager);
   @override
   Future<FireBaseAuthResult> signInWithEmailAndPassword(
       String email, String password) async {
