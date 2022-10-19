@@ -26,6 +26,9 @@ class $AssetsImagesGen {
   AssetGenImage get bgLogin =>
       const AssetGenImage('assets/images/bg-login.png');
 
+  /// File path: assets/images/blog-bg.png
+  AssetGenImage get blogBg => const AssetGenImage('assets/images/blog-bg.png');
+
   /// File path: assets/images/home-icon.svg
   SvgGenImage get homeIcon => const SvgGenImage('assets/images/home-icon.svg');
 

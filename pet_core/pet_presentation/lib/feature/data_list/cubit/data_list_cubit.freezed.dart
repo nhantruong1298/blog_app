@@ -31,14 +31,14 @@ mixin _$DataListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,13 +67,13 @@ mixin _$DataListState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -94,17 +94,18 @@ mixin _$DataListState {
 abstract class $DataListStateCopyWith<$Res> {
   factory $DataListStateCopyWith(
           DataListState value, $Res Function(DataListState) then) =
-      _$DataListStateCopyWithImpl<$Res>;
+      _$DataListStateCopyWithImpl<$Res, DataListState>;
 }
 
 /// @nodoc
-class _$DataListStateCopyWithImpl<$Res>
+class _$DataListStateCopyWithImpl<$Res, $Val extends DataListState>
     implements $DataListStateCopyWith<$Res> {
   _$DataListStateCopyWithImpl(this._value, this._then);
 
-  final DataListState _value;
   // ignore: unused_field
-  final $Res Function(DataListState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -116,14 +117,11 @@ abstract class _$$_DataListStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DataListStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$_DataListState>
     implements _$$_DataListStateCopyWith<$Res> {
   __$$_DataListStateCopyWithImpl(
       _$_DataListState _value, $Res Function(_$_DataListState) _then)
-      : super(_value, (v) => _then(v as _$_DataListState));
-
-  @override
-  _$_DataListState get _value => super._value as _$_DataListState;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -170,14 +168,14 @@ class _$_DataListState with DiagnosticableTreeMixin implements _DataListState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return $default?.call();
   }
@@ -218,13 +216,13 @@ class _$_DataListState with DiagnosticableTreeMixin implements _DataListState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return $default?.call(this);
   }
@@ -257,27 +255,25 @@ abstract class _$$DataListRefreshingStateCopyWith<$Res> {
   factory _$$DataListRefreshingStateCopyWith(_$DataListRefreshingState value,
           $Res Function(_$DataListRefreshingState) then) =
       __$$DataListRefreshingStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic prevData});
 }
 
 /// @nodoc
 class __$$DataListRefreshingStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$DataListRefreshingState>
     implements _$$DataListRefreshingStateCopyWith<$Res> {
   __$$DataListRefreshingStateCopyWithImpl(_$DataListRefreshingState _value,
       $Res Function(_$DataListRefreshingState) _then)
-      : super(_value, (v) => _then(v as _$DataListRefreshingState));
+      : super(_value, _then);
 
-  @override
-  _$DataListRefreshingState get _value =>
-      super._value as _$DataListRefreshingState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? prevData = freezed,
+    Object? prevData = null,
   }) {
     return _then(_$DataListRefreshingState(
-      prevData: prevData == freezed
+      prevData: null == prevData
           ? _value.prevData
           : prevData // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -322,6 +318,7 @@ class _$DataListRefreshingState
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataListRefreshingStateCopyWith<_$DataListRefreshingState> get copyWith =>
       __$$DataListRefreshingStateCopyWithImpl<_$DataListRefreshingState>(
           this, _$identity);
@@ -345,14 +342,14 @@ class _$DataListRefreshingState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return refreshing?.call(prevData);
   }
@@ -393,13 +390,13 @@ class _$DataListRefreshingState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return refreshing?.call(this);
   }
@@ -427,7 +424,7 @@ abstract class DataListRefreshingState implements DataListState {
   const factory DataListRefreshingState({final dynamic prevData}) =
       _$DataListRefreshingState;
 
-  dynamic get prevData => throw _privateConstructorUsedError;
+  dynamic get prevData;
   @JsonKey(ignore: true)
   _$$DataListRefreshingStateCopyWith<_$DataListRefreshingState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -438,31 +435,30 @@ abstract class _$$DataListLoadingStateCopyWith<$Res> {
   factory _$$DataListLoadingStateCopyWith(_$DataListLoadingState value,
           $Res Function(_$DataListLoadingState) then) =
       __$$DataListLoadingStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({int currentPage, dynamic prevData});
 }
 
 /// @nodoc
 class __$$DataListLoadingStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$DataListLoadingState>
     implements _$$DataListLoadingStateCopyWith<$Res> {
   __$$DataListLoadingStateCopyWithImpl(_$DataListLoadingState _value,
       $Res Function(_$DataListLoadingState) _then)
-      : super(_value, (v) => _then(v as _$DataListLoadingState));
+      : super(_value, _then);
 
-  @override
-  _$DataListLoadingState get _value => super._value as _$DataListLoadingState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPage = freezed,
-    Object? prevData = freezed,
+    Object? currentPage = null,
+    Object? prevData = null,
   }) {
     return _then(_$DataListLoadingState(
-      currentPage: currentPage == freezed
+      currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
-      prevData: prevData == freezed
+      prevData: null == prevData
           ? _value.prevData
           : prevData // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -502,19 +498,18 @@ class _$DataListLoadingState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataListLoadingState &&
-            const DeepCollectionEquality()
-                .equals(other.currentPage, currentPage) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
             const DeepCollectionEquality().equals(other.prevData, prevData));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(currentPage),
-      const DeepCollectionEquality().hash(prevData));
+      runtimeType, currentPage, const DeepCollectionEquality().hash(prevData));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataListLoadingStateCopyWith<_$DataListLoadingState> get copyWith =>
       __$$DataListLoadingStateCopyWithImpl<_$DataListLoadingState>(
           this, _$identity);
@@ -538,14 +533,14 @@ class _$DataListLoadingState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return loading?.call(currentPage, prevData);
   }
@@ -586,13 +581,13 @@ class _$DataListLoadingState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return loading?.call(this);
   }
@@ -620,8 +615,8 @@ abstract class DataListLoadingState implements DataListState {
   const factory DataListLoadingState(
       {final int currentPage, final dynamic prevData}) = _$DataListLoadingState;
 
-  int get currentPage => throw _privateConstructorUsedError;
-  dynamic get prevData => throw _privateConstructorUsedError;
+  int get currentPage;
+  dynamic get prevData;
   @JsonKey(ignore: true)
   _$$DataListLoadingStateCopyWith<_$DataListLoadingState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -632,32 +627,30 @@ abstract class _$$DataListLoadingMoreStateCopyWith<$Res> {
   factory _$$DataListLoadingMoreStateCopyWith(_$DataListLoadingMoreState value,
           $Res Function(_$DataListLoadingMoreState) then) =
       __$$DataListLoadingMoreStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({int currentPage, dynamic prevData});
 }
 
 /// @nodoc
 class __$$DataListLoadingMoreStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$DataListLoadingMoreState>
     implements _$$DataListLoadingMoreStateCopyWith<$Res> {
   __$$DataListLoadingMoreStateCopyWithImpl(_$DataListLoadingMoreState _value,
       $Res Function(_$DataListLoadingMoreState) _then)
-      : super(_value, (v) => _then(v as _$DataListLoadingMoreState));
+      : super(_value, _then);
 
-  @override
-  _$DataListLoadingMoreState get _value =>
-      super._value as _$DataListLoadingMoreState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPage = freezed,
-    Object? prevData = freezed,
+    Object? currentPage = null,
+    Object? prevData = null,
   }) {
     return _then(_$DataListLoadingMoreState(
-      currentPage: currentPage == freezed
+      currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
-      prevData: prevData == freezed
+      prevData: null == prevData
           ? _value.prevData
           : prevData // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -697,19 +690,18 @@ class _$DataListLoadingMoreState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataListLoadingMoreState &&
-            const DeepCollectionEquality()
-                .equals(other.currentPage, currentPage) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
             const DeepCollectionEquality().equals(other.prevData, prevData));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(currentPage),
-      const DeepCollectionEquality().hash(prevData));
+      runtimeType, currentPage, const DeepCollectionEquality().hash(prevData));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataListLoadingMoreStateCopyWith<_$DataListLoadingMoreState>
       get copyWith =>
           __$$DataListLoadingMoreStateCopyWithImpl<_$DataListLoadingMoreState>(
@@ -734,14 +726,14 @@ class _$DataListLoadingMoreState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return loadingMore?.call(currentPage, prevData);
   }
@@ -782,13 +774,13 @@ class _$DataListLoadingMoreState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return loadingMore?.call(this);
   }
@@ -817,8 +809,8 @@ abstract class DataListLoadingMoreState implements DataListState {
       {final int currentPage,
       final dynamic prevData}) = _$DataListLoadingMoreState;
 
-  int get currentPage => throw _privateConstructorUsedError;
-  dynamic get prevData => throw _privateConstructorUsedError;
+  int get currentPage;
+  dynamic get prevData;
   @JsonKey(ignore: true)
   _$$DataListLoadingMoreStateCopyWith<_$DataListLoadingMoreState>
       get copyWith => throw _privateConstructorUsedError;
@@ -829,31 +821,30 @@ abstract class _$$DataListLoadedStateCopyWith<$Res> {
   factory _$$DataListLoadedStateCopyWith(_$DataListLoadedState value,
           $Res Function(_$DataListLoadedState) then) =
       __$$DataListLoadedStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({int currentPage, dynamic data});
 }
 
 /// @nodoc
 class __$$DataListLoadedStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$DataListLoadedState>
     implements _$$DataListLoadedStateCopyWith<$Res> {
   __$$DataListLoadedStateCopyWithImpl(
       _$DataListLoadedState _value, $Res Function(_$DataListLoadedState) _then)
-      : super(_value, (v) => _then(v as _$DataListLoadedState));
+      : super(_value, _then);
 
-  @override
-  _$DataListLoadedState get _value => super._value as _$DataListLoadedState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPage = freezed,
-    Object? data = freezed,
+    Object? currentPage = null,
+    Object? data = null,
   }) {
     return _then(_$DataListLoadedState(
-      currentPage: currentPage == freezed
+      currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -893,19 +884,18 @@ class _$DataListLoadedState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataListLoadedState &&
-            const DeepCollectionEquality()
-                .equals(other.currentPage, currentPage) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(currentPage),
-      const DeepCollectionEquality().hash(data));
+      runtimeType, currentPage, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataListLoadedStateCopyWith<_$DataListLoadedState> get copyWith =>
       __$$DataListLoadedStateCopyWithImpl<_$DataListLoadedState>(
           this, _$identity);
@@ -929,14 +919,14 @@ class _$DataListLoadedState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return loaded?.call(currentPage, data);
   }
@@ -977,13 +967,13 @@ class _$DataListLoadedState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return loaded?.call(this);
   }
@@ -1011,8 +1001,8 @@ abstract class DataListLoadedState implements DataListState {
   const factory DataListLoadedState(
       {final int currentPage, final dynamic data}) = _$DataListLoadedState;
 
-  int get currentPage => throw _privateConstructorUsedError;
-  dynamic get data => throw _privateConstructorUsedError;
+  int get currentPage;
+  dynamic get data;
   @JsonKey(ignore: true)
   _$$DataListLoadedStateCopyWith<_$DataListLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1023,37 +1013,35 @@ abstract class _$$DataListLoadedMoreStateCopyWith<$Res> {
   factory _$$DataListLoadedMoreStateCopyWith(_$DataListLoadedMoreState value,
           $Res Function(_$DataListLoadedMoreState) then) =
       __$$DataListLoadedMoreStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({int currentPage, dynamic prevData, dynamic moreData});
 }
 
 /// @nodoc
 class __$$DataListLoadedMoreStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$DataListLoadedMoreState>
     implements _$$DataListLoadedMoreStateCopyWith<$Res> {
   __$$DataListLoadedMoreStateCopyWithImpl(_$DataListLoadedMoreState _value,
       $Res Function(_$DataListLoadedMoreState) _then)
-      : super(_value, (v) => _then(v as _$DataListLoadedMoreState));
+      : super(_value, _then);
 
-  @override
-  _$DataListLoadedMoreState get _value =>
-      super._value as _$DataListLoadedMoreState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentPage = freezed,
-    Object? prevData = freezed,
-    Object? moreData = freezed,
+    Object? currentPage = null,
+    Object? prevData = null,
+    Object? moreData = null,
   }) {
     return _then(_$DataListLoadedMoreState(
-      currentPage: currentPage == freezed
+      currentPage: null == currentPage
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
-      prevData: prevData == freezed
+      prevData: null == prevData
           ? _value.prevData
           : prevData // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      moreData: moreData == freezed
+      moreData: null == moreData
           ? _value.moreData
           : moreData // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -1097,8 +1085,8 @@ class _$DataListLoadedMoreState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataListLoadedMoreState &&
-            const DeepCollectionEquality()
-                .equals(other.currentPage, currentPage) &&
+            (identical(other.currentPage, currentPage) ||
+                other.currentPage == currentPage) &&
             const DeepCollectionEquality().equals(other.prevData, prevData) &&
             const DeepCollectionEquality().equals(other.moreData, moreData));
   }
@@ -1106,12 +1094,13 @@ class _$DataListLoadedMoreState
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(currentPage),
+      currentPage,
       const DeepCollectionEquality().hash(prevData),
       const DeepCollectionEquality().hash(moreData));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataListLoadedMoreStateCopyWith<_$DataListLoadedMoreState> get copyWith =>
       __$$DataListLoadedMoreStateCopyWithImpl<_$DataListLoadedMoreState>(
           this, _$identity);
@@ -1135,14 +1124,14 @@ class _$DataListLoadedMoreState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return loadedMore?.call(currentPage, prevData, moreData);
   }
@@ -1183,13 +1172,13 @@ class _$DataListLoadedMoreState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return loadedMore?.call(this);
   }
@@ -1219,9 +1208,9 @@ abstract class DataListLoadedMoreState implements DataListState {
       final dynamic prevData,
       final dynamic moreData}) = _$DataListLoadedMoreState;
 
-  int get currentPage => throw _privateConstructorUsedError;
-  dynamic get prevData => throw _privateConstructorUsedError;
-  dynamic get moreData => throw _privateConstructorUsedError;
+  int get currentPage;
+  dynamic get prevData;
+  dynamic get moreData;
   @JsonKey(ignore: true)
   _$$DataListLoadedMoreStateCopyWith<_$DataListLoadedMoreState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1232,27 +1221,25 @@ abstract class _$$DataListLoadFailedStateCopyWith<$Res> {
   factory _$$DataListLoadFailedStateCopyWith(_$DataListLoadFailedState value,
           $Res Function(_$DataListLoadFailedState) then) =
       __$$DataListLoadFailedStateCopyWithImpl<$Res>;
+  @useResult
   $Res call({AppException? loadingError});
 }
 
 /// @nodoc
 class __$$DataListLoadFailedStateCopyWithImpl<$Res>
-    extends _$DataListStateCopyWithImpl<$Res>
+    extends _$DataListStateCopyWithImpl<$Res, _$DataListLoadFailedState>
     implements _$$DataListLoadFailedStateCopyWith<$Res> {
   __$$DataListLoadFailedStateCopyWithImpl(_$DataListLoadFailedState _value,
       $Res Function(_$DataListLoadFailedState) _then)
-      : super(_value, (v) => _then(v as _$DataListLoadFailedState));
+      : super(_value, _then);
 
-  @override
-  _$DataListLoadFailedState get _value =>
-      super._value as _$DataListLoadFailedState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? loadingError = freezed,
   }) {
     return _then(_$DataListLoadFailedState(
-      loadingError: loadingError == freezed
+      loadingError: freezed == loadingError
           ? _value.loadingError
           : loadingError // ignore: cast_nullable_to_non_nullable
               as AppException?,
@@ -1288,16 +1275,16 @@ class _$DataListLoadFailedState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DataListLoadFailedState &&
-            const DeepCollectionEquality()
-                .equals(other.loadingError, loadingError));
+            (identical(other.loadingError, loadingError) ||
+                other.loadingError == loadingError));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(loadingError));
+  int get hashCode => Object.hash(runtimeType, loadingError);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$DataListLoadFailedStateCopyWith<_$DataListLoadFailedState> get copyWith =>
       __$$DataListLoadFailedStateCopyWithImpl<_$DataListLoadFailedState>(
           this, _$identity);
@@ -1321,14 +1308,14 @@ class _$DataListLoadFailedState
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function(dynamic prevData)? refreshing,
-    TResult Function(int currentPage, dynamic prevData)? loading,
-    TResult Function(int currentPage, dynamic prevData)? loadingMore,
-    TResult Function(int currentPage, dynamic data)? loaded,
-    TResult Function(int currentPage, dynamic prevData, dynamic moreData)?
+    TResult? Function()? $default, {
+    TResult? Function(dynamic prevData)? refreshing,
+    TResult? Function(int currentPage, dynamic prevData)? loading,
+    TResult? Function(int currentPage, dynamic prevData)? loadingMore,
+    TResult? Function(int currentPage, dynamic data)? loaded,
+    TResult? Function(int currentPage, dynamic prevData, dynamic moreData)?
         loadedMore,
-    TResult Function(AppException? loadingError)? failed,
+    TResult? Function(AppException? loadingError)? failed,
   }) {
     return failed?.call(loadingError);
   }
@@ -1369,13 +1356,13 @@ class _$DataListLoadFailedState
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_DataListState value)? $default, {
-    TResult Function(DataListRefreshingState value)? refreshing,
-    TResult Function(DataListLoadingState value)? loading,
-    TResult Function(DataListLoadingMoreState value)? loadingMore,
-    TResult Function(DataListLoadedState value)? loaded,
-    TResult Function(DataListLoadedMoreState value)? loadedMore,
-    TResult Function(DataListLoadFailedState value)? failed,
+    TResult? Function(_DataListState value)? $default, {
+    TResult? Function(DataListRefreshingState value)? refreshing,
+    TResult? Function(DataListLoadingState value)? loading,
+    TResult? Function(DataListLoadingMoreState value)? loadingMore,
+    TResult? Function(DataListLoadedState value)? loaded,
+    TResult? Function(DataListLoadedMoreState value)? loadedMore,
+    TResult? Function(DataListLoadFailedState value)? failed,
   }) {
     return failed?.call(this);
   }
@@ -1403,7 +1390,7 @@ abstract class DataListLoadFailedState implements DataListState {
   const factory DataListLoadFailedState({final AppException? loadingError}) =
       _$DataListLoadFailedState;
 
-  AppException? get loadingError => throw _privateConstructorUsedError;
+  AppException? get loadingError;
   @JsonKey(ignore: true)
   _$$DataListLoadFailedStateCopyWith<_$DataListLoadFailedState> get copyWith =>
       throw _privateConstructorUsedError;
