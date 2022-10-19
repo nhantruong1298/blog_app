@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pet_presentation/resources/app_colors.dart';
 import 'package:pet_presentation/resources/app_dimensions.dart';
-import 'package:pet_presentation/widgets/icons/app_icon.dart';
 
 class BasicLayout extends StatelessWidget {
   const BasicLayout({

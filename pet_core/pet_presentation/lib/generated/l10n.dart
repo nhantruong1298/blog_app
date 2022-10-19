@@ -129,6 +129,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Comments`
+  String get BLOG__COMMENTS {
+    return Intl.message(
+      'Comments',
+      name: 'BLOG__COMMENTS',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reactions`
+  String get BLOG__REACTIONS {
+    return Intl.message(
+      'Reactions',
+      name: 'BLOG__REACTIONS',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

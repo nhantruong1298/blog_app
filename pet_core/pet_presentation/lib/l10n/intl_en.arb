@@ -6,5 +6,10 @@
     "COMMON__OK_BUTTON":"OK",
     "COMMON__CONFIRM_BUTTON":"Confirm",
     "EXCEPTION__UNEXPECTED":"Unexpected error",
-    "COMMON__ERROR_TITLE_TEXT": "Error"
+    "COMMON__ERROR_TITLE_TEXT": "Error",
+    "BLOG__COMMENTS":"Comments",
+    "BLOG__REACTIONS":"Reactions",
+    "SIGN_IN__NEW_TO_BLOG":"New to Blog?",
+    "SIGN_IN__REGISTER":"Register"
+
 }

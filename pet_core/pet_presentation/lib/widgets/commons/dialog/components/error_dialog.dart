@@ -60,8 +60,8 @@ class ErrorDialog extends AppDialogWidget {
                   : null,
           title:
               exception.exceptionCode == BusinessExceptionCode.UNEXPECTED_ERROR
-                  ? "S.current.COMMON__SOMETHING_WENT_WRONG_HEADER_TEXT"
-                  : "S.current.COMMON__ERROR_TITLE_TEXT",
+                  ? "Look like something went wrong"
+                  : S.current.COMMON__ERROR_TITLE_TEXT,
           message: exception.displayMessage,
           isShowCloseButton: false,
           buttonDirection: DialogButtonDirection.HORIZONTAL,

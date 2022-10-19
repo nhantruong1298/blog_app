@@ -16,7 +16,6 @@ import 'package:pet_presentation/widgets/commons/button/button_type.dart';
 import 'package:pet_presentation/widgets/commons/layouts/basic_layout.dart';
 import 'package:pet_presentation/widgets/commons/layouts/keyboard_avoid_scroll_view.dart';
 import 'package:pet_presentation/widgets/commons/typography/body_text.dart';
-import 'package:pet_presentation/widgets/commons/typography/button_text.dart';
 import 'package:pet_presentation/widgets/commons/typography/heading_text.dart';
 import 'package:pet_presentation/widgets/input/password_field.dart';
 import 'package:pet_presentation/widgets/input/text_input_field.dart';
@@ -68,6 +67,18 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
               const Spacing(3),
               Heading3Text(S.current.SIGN_IN__TEXT,
                   color: AppColors.primaryColor500),
+              Row(children: [
+                BodyMText(
+                  'New to Blog?',
+                  color: AppColors.textGreyColor,
+                ),
+                TextButton(
+                    onPressed: () {},
+                    child: BodyMText(
+                      'Register',
+                      color: AppColors.primaryBackgroundColor,
+                    ))
+              ]),
               const Spacing(2),
               _buildUserNameField(),
               const Spacing(1),
@@ -79,16 +90,15 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                      child: BodyLText('Forgot Password'), onPressed: () {}),
+                      child: BodyLText(
+                        'Forgot Password',
+                        color: AppColors.primaryBackgroundColor,
+                        style: BodyLText.defaultStyle
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      onPressed: () {}),
                 ],
               ),
-              const Spacing(1),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(child: BodyLText('Sign up'), onPressed: () {}),
-                ],
-              )
             ]));
   }
 
@@ -141,7 +151,7 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
 
                   if (isValid == true) {
                     signInCubit.onSignInPressed(
-                      context,
+                        context,
                         _formKey.currentState
                                 ?.getRawValue<String>(USER_NAME_KEY) ??
                             '',

@@ -118,7 +118,7 @@ class _TextInputFieldState extends State<TextInputField> {
         Text('${widget.labelText ?? ''} ', style: _getLabelStyle(hasFocus)),
         Text(
           (widget.markRequired) ? '*' : '',
-          style: TextStyle(color: AppColors.errorColor),
+          style: const TextStyle(color: AppColors.errorColor),
         )
       ],
     );

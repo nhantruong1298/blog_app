@@ -1,4 +1,29 @@
 include: package:flutter_lints/flutter.yaml
 
+
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+
+  errors:
+    invalid_annotation_target: ignore
+    constant_identifier_names: ignore
+    non_constant_identifier_names: ignore
+linter:
+  rules:
+    constant_identifier_names: false
+    lowercase_with_underscores: false
+    library_prefixes: false
+    directives_ordering: true
+    depend_on_referenced_packages: false
+    no_leading_underscores_for_local_identifiers: false
+    library_private_types_in_public_api: false
+    sort_child_properties_last: false
+    use_build_context_synchronously: false
+    prefer_interpolation_to_compose_strings: false
+
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

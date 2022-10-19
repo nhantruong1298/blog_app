@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "BLOG__COMMENTS": MessageLookupByLibrary.simpleMessage("Comments"),
+        "BLOG__REACTIONS": MessageLookupByLibrary.simpleMessage("Reactions"),
         "COMMON__CANCEL_BUTTON": MessageLookupByLibrary.simpleMessage("Cancel"),
         "COMMON__CONFIRM_BUTTON":
             MessageLookupByLibrary.simpleMessage("Confirm"),

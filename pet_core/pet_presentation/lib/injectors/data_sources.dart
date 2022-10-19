@@ -1,8 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:pet_data/data_source/data_storage.dart';
-import 'package:pet_domain/repository/log_service.dart';
-import 'package:pet_data/repository/log_service_impl.dart';
 import 'package:pet_data/networking/service_manager.dart';
+import 'package:pet_data/repository/log_service_impl.dart';
+import 'package:pet_domain/repository/log_service.dart';
 
 class DataSourceInjector {
   static void configureRepository(GetIt getIt) {

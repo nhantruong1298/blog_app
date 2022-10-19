@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pet_presentation/generated/assets.gen.dart';
 import 'package:pet_presentation/generated/extension.dart';
 import 'package:pet_presentation/resources/app_dimensions.dart';
-import 'package:pet_presentation/generated/assets.gen.dart';
 
 class AppIcon extends StatelessWidget {
   final String? icon;
