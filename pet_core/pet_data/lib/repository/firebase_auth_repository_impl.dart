@@ -6,8 +6,11 @@ class FirebaseAuthRepositoryImpl extends FirebaseAuthRepository {
   final ServiceManager _serviceManager;
   FirebaseAuthRepositoryImpl(this._serviceManager);
   @override
-  Future<FireBaseAuthResult> signInWithEmailAndPassword(
+  Future<SignInWithEmailResult> signInWithEmailAndPassword(
       String email, String password) async {
-    return _serviceManager.signInWithEmailAndPassword(email, password);
+    final response =
+        await _serviceManager.signInWithEmailAndPassword(email, password);
+
+    return SignInWithEmailResult(userName: response.userName,userId: response.userId);
   }
 }

@@ -8,7 +8,7 @@ part 'authentication_state.dart';
 class AuthenticationCubit extends Cubit<AuthenticationState> {
   AuthenticationCubit() : super(const AuthenticationState(isSignedIn: false));
 
-  void authenticateWithFirebase({required FireBaseAuthResult data}) {
+  void authenticateWithFirebase({required SignInWithEmailResult data}) {
     emit(state.copyWith(isSignedIn: true, fireBaseAuthResult: data));
   }
 }

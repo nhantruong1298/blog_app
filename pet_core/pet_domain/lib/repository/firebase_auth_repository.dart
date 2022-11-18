@@ -1,6 +1,6 @@
 import 'package:pet_domain/model/authentication/firebase_auth.dart';
 
 abstract class FirebaseAuthRepository {
-  Future<FireBaseAuthResult> signInWithEmailAndPassword(
+  Future<SignInWithEmailResult> signInWithEmailAndPassword(
       String email, String password);
 }
