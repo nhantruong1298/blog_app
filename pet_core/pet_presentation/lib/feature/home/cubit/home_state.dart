@@ -6,5 +6,8 @@ class HomeState with _$HomeState {
   const factory HomeState.loading(bool isLoading) = LoadingState;
   const factory HomeState.exception(AppException appException) =
       HomeExceptionState;
-  const factory HomeState.loaded(String userName) = HomeLoadedState;
+  const factory HomeState.loaded(
+    String userName,
+    List<LoadBlogResult> blogs,
+  ) = HomeLoadedState;
 }
