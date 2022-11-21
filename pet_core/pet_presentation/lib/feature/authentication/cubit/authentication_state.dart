@@ -6,25 +6,16 @@ part of 'authentication_cubit.dart';
 @immutable
 class AuthenticationState extends Equatable {
   final bool isSignedIn;
-  final FireBaseAuthResult? firebaseAuthResult;
-   const AuthenticationState({
-    this.isSignedIn = false,
-    this.firebaseAuthResult
-  });
+  final SignInWithEmailResult? firebaseAuthResult;
+  const AuthenticationState({this.isSignedIn = false, this.firebaseAuthResult});
 
   @override
-  List<Object?> get props => [
-        isSignedIn,
-        firebaseAuthResult
-      ];
+  List<Object?> get props => [isSignedIn, firebaseAuthResult];
 
-  AuthenticationState copyWith({
-    bool? isSignedIn,
-    FireBaseAuthResult? fireBaseAuthResult
-  }) {
+  AuthenticationState copyWith(
+      {bool? isSignedIn, SignInWithEmailResult? fireBaseAuthResult}) {
     return AuthenticationState(
-      isSignedIn: isSignedIn ?? this.isSignedIn,
-      firebaseAuthResult: firebaseAuthResult
-    );
+        isSignedIn: isSignedIn ?? this.isSignedIn,
+        firebaseAuthResult: firebaseAuthResult);
   }
 }

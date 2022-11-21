@@ -21,7 +21,8 @@ mixin _$HomeState {
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
     required TResult Function(AppException appException) exception,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName, List<LoadBlogResult> blogs)
+        loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +30,7 @@ mixin _$HomeState {
     TResult? Function()? init,
     TResult? Function(bool isLoading)? loading,
     TResult? Function(AppException appException)? exception,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName, List<LoadBlogResult> blogs)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +38,7 @@ mixin _$HomeState {
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
     TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName, List<LoadBlogResult> blogs)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,7 +127,8 @@ class _$HomeInitial implements HomeInitial {
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
     required TResult Function(AppException appException) exception,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName, List<LoadBlogResult> blogs)
+        loaded,
   }) {
     return init();
   }
@@ -137,7 +139,7 @@ class _$HomeInitial implements HomeInitial {
     TResult? Function()? init,
     TResult? Function(bool isLoading)? loading,
     TResult? Function(AppException appException)? exception,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName, List<LoadBlogResult> blogs)? loaded,
   }) {
     return init?.call();
   }
@@ -148,7 +150,7 @@ class _$HomeInitial implements HomeInitial {
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
     TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName, List<LoadBlogResult> blogs)? loaded,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -267,7 +269,8 @@ class _$LoadingState implements LoadingState {
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
     required TResult Function(AppException appException) exception,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName, List<LoadBlogResult> blogs)
+        loaded,
   }) {
     return loading(isLoading);
   }
@@ -278,7 +281,7 @@ class _$LoadingState implements LoadingState {
     TResult? Function()? init,
     TResult? Function(bool isLoading)? loading,
     TResult? Function(AppException appException)? exception,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName, List<LoadBlogResult> blogs)? loaded,
   }) {
     return loading?.call(isLoading);
   }
@@ -289,7 +292,7 @@ class _$LoadingState implements LoadingState {
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
     TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName, List<LoadBlogResult> blogs)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -414,7 +417,8 @@ class _$HomeExceptionState implements HomeExceptionState {
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
     required TResult Function(AppException appException) exception,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName, List<LoadBlogResult> blogs)
+        loaded,
   }) {
     return exception(appException);
   }
@@ -425,7 +429,7 @@ class _$HomeExceptionState implements HomeExceptionState {
     TResult? Function()? init,
     TResult? Function(bool isLoading)? loading,
     TResult? Function(AppException appException)? exception,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName, List<LoadBlogResult> blogs)? loaded,
   }) {
     return exception?.call(appException);
   }
@@ -436,7 +440,7 @@ class _$HomeExceptionState implements HomeExceptionState {
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
     TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName, List<LoadBlogResult> blogs)? loaded,
     required TResult orElse(),
   }) {
     if (exception != null) {
@@ -499,7 +503,7 @@ abstract class _$$HomeLoadedStateCopyWith<$Res> {
           _$HomeLoadedState value, $Res Function(_$HomeLoadedState) then) =
       __$$HomeLoadedStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({String userName});
+  $Res call({String userName, List<LoadBlogResult> blogs});
 }
 
 /// @nodoc
@@ -514,12 +518,17 @@ class __$$HomeLoadedStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? userName = null,
+    Object? blogs = null,
   }) {
     return _then(_$HomeLoadedState(
       null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
+      null == blogs
+          ? _value._blogs
+          : blogs // ignore: cast_nullable_to_non_nullable
+              as List<LoadBlogResult>,
     ));
   }
 }
@@ -527,14 +536,21 @@ class __$$HomeLoadedStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomeLoadedState implements HomeLoadedState {
-  const _$HomeLoadedState(this.userName);
+  const _$HomeLoadedState(this.userName, final List<LoadBlogResult> blogs)
+      : _blogs = blogs;
 
   @override
   final String userName;
+  final List<LoadBlogResult> _blogs;
+  @override
+  List<LoadBlogResult> get blogs {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_blogs);
+  }
 
   @override
   String toString() {
-    return 'HomeState.loaded(userName: $userName)';
+    return 'HomeState.loaded(userName: $userName, blogs: $blogs)';
   }
 
   @override
@@ -543,11 +559,13 @@ class _$HomeLoadedState implements HomeLoadedState {
         (other.runtimeType == runtimeType &&
             other is _$HomeLoadedState &&
             (identical(other.userName, userName) ||
-                other.userName == userName));
+                other.userName == userName) &&
+            const DeepCollectionEquality().equals(other._blogs, _blogs));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userName);
+  int get hashCode => Object.hash(
+      runtimeType, userName, const DeepCollectionEquality().hash(_blogs));
 
   @JsonKey(ignore: true)
   @override
@@ -561,9 +579,10 @@ class _$HomeLoadedState implements HomeLoadedState {
     required TResult Function() init,
     required TResult Function(bool isLoading) loading,
     required TResult Function(AppException appException) exception,
-    required TResult Function(String userName) loaded,
+    required TResult Function(String userName, List<LoadBlogResult> blogs)
+        loaded,
   }) {
-    return loaded(userName);
+    return loaded(userName, blogs);
   }
 
   @override
@@ -572,9 +591,9 @@ class _$HomeLoadedState implements HomeLoadedState {
     TResult? Function()? init,
     TResult? Function(bool isLoading)? loading,
     TResult? Function(AppException appException)? exception,
-    TResult? Function(String userName)? loaded,
+    TResult? Function(String userName, List<LoadBlogResult> blogs)? loaded,
   }) {
-    return loaded?.call(userName);
+    return loaded?.call(userName, blogs);
   }
 
   @override
@@ -583,11 +602,11 @@ class _$HomeLoadedState implements HomeLoadedState {
     TResult Function()? init,
     TResult Function(bool isLoading)? loading,
     TResult Function(AppException appException)? exception,
-    TResult Function(String userName)? loaded,
+    TResult Function(String userName, List<LoadBlogResult> blogs)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(userName);
+      return loaded(userName, blogs);
     }
     return orElse();
   }
@@ -631,9 +650,12 @@ class _$HomeLoadedState implements HomeLoadedState {
 }
 
 abstract class HomeLoadedState implements HomeState {
-  const factory HomeLoadedState(final String userName) = _$HomeLoadedState;
+  const factory HomeLoadedState(
+          final String userName, final List<LoadBlogResult> blogs) =
+      _$HomeLoadedState;
 
   String get userName;
+  List<LoadBlogResult> get blogs;
   @JsonKey(ignore: true)
   _$$HomeLoadedStateCopyWith<_$HomeLoadedState> get copyWith =>
       throw _privateConstructorUsedError;

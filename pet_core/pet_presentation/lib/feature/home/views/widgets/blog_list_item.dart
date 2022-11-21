@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_presentation/feature/utils/date_formatter.dart';
 import 'package:pet_presentation/generated/assets.gen.dart';
 import 'package:pet_presentation/generated/l10n.dart';
 import 'package:pet_presentation/resources/app_colors.dart';
@@ -10,7 +11,7 @@ import 'package:pet_presentation/widgets/commons/typography/heading_text.dart';
 class BlogListItem extends StatelessWidget {
   final String? avatarUrl;
   final String? name;
-  final String? date;
+  final DateTime? dateCrated;
   final String? title;
   final List<String?> tags;
   final int? likesAmount;
@@ -20,7 +21,7 @@ class BlogListItem extends StatelessWidget {
       {Key? key,
       this.avatarUrl,
       this.name,
-      this.date,
+      this.dateCrated,
       this.title,
       this.tags = const [],
       this.likesAmount,
@@ -42,7 +43,7 @@ class BlogListItem extends StatelessWidget {
               style: BodySText.defaultStyle.copyWith(
                   fontWeight: FontWeight.w500, color: const Color(0xFF3D3D3D)),
             ),
-            BodyXSText(date ?? '', color: const Color(0xFF525252)),
+            BodyXSText(DateFormatter.formatDate(dateCrated), color: const Color(0xFF525252)),
             const Spacing(1),
             Heading3Text(title ?? ''),
             const Spacing(1),

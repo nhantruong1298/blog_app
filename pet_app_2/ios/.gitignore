@@ -32,3 +32,8 @@ Runner/GeneratedPluginRegistrant.*
 !default.mode2v3
 !default.pbxuser
 !default.perspectivev3
+
+
+# Avoid commit firebase file
+google-services.json
+GoogleService-Info.plist
