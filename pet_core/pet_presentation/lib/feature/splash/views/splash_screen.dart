@@ -34,7 +34,8 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Assets.images.blogBg.image(width: 200, height: 200,color: Colors.white),
+          Assets.images.blogBg
+              .image(width: 200, height: 200, color: Colors.white),
           Container(
               padding: const EdgeInsets.symmetric(
                   horizontal: 2 * AppDimensions.defaultPadding,

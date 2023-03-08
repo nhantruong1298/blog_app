@@ -1,5 +1,5 @@
 import 'package:badges/badges.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:pet_presentation/resources/app_colors.dart';
 import 'package:pet_presentation/resources/app_dimensions.dart';
 import 'package:pet_presentation/widgets/commons/typography/body_text.dart';
@@ -19,10 +19,10 @@ class NotificationButton extends StatelessWidget {
           padding: const EdgeInsets.only(right: AppDimensions.defaultXSPadding),
           icon: Badge(
             showBadge: count != 0,
-            animationType: BadgeAnimationType.scale,
-            padding: EdgeInsets.all(count < 10
-                ? AppDimensions.defaultXSPadding
-                : AppDimensions.defaultXXSPadding),
+            // animationType: BadgeAnimationType.scale,
+            // padding: EdgeInsets.all(count < 10
+            //     ? AppDimensions.defaultXSPadding
+            //     : AppDimensions.defaultXXSPadding),
             badgeContent: BodySText(
               '$count',
               color: AppColors.primaryBackgroundColor,

@@ -151,7 +151,7 @@ class SvgGenImage {
       excludeFromSemantics: excludeFromSemantics,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      theme: theme,
+      theme: theme ?? const SvgTheme(),
     );
   }
 

@@ -25,9 +25,10 @@ class _PetApplicationState extends State<PetApplication> {
         )
       ],
       child: MaterialApp.router(
-        routeInformationParser: router.routeInformationParser,
+      //  routeInformationParser: router.routeInformationParser,
         debugShowCheckedModeBanner: false,
-        routerDelegate: router.routerDelegate,
+       // routerDelegate: router.routerDelegate,
+        routerConfig: router,
         localizationsDelegates: const [
           S.delegate,
           GlobalMaterialLocalizations.delegate,

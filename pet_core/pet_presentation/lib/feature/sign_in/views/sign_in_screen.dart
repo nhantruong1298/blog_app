@@ -109,8 +109,8 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
       labelText: S.current.SIGN_IN__PASSWORD,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: FormBuilderValidators.compose([
-        FormBuilderValidators.required(context),
-        FormBuilderValidators.minLength(context, 8)
+        FormBuilderValidators.required(),
+        FormBuilderValidators.minLength( 8)
       ]),
     );
   }
@@ -122,8 +122,8 @@ class _SignInScreenState extends BaseScreenState<SignInScreen> {
       initialValue: 'test@gmail.co',
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: FormBuilderValidators.compose([
-        FormBuilderValidators.required(context),
-        FormBuilderValidators.email(context)
+        FormBuilderValidators.required(),
+        FormBuilderValidators.email()
       ]),
       autofillHints: const [AutofillHints.email],
     );
